@@ -1,0 +1,13 @@
+<div class="stock-dash">
+  Name:
+  <span class="stock-name"
+        ng-bind="stockData.name">
+  </span>
+  Price:
+  <span class="stock-price"
+        ng-bind="stockData.price | currency">
+  </span>
+  <span class="stock-change"
+        ng-bind="getChange( stockData ) + '%'">
+  </span>  
+</div>
