@@ -19,4 +19,6 @@ CountStream.prototype._write = function( chunk, encoding, cb ) {
   cb();
 };
 
-
+CountStream.prototype.end = function() {
+  this.emit( 'total', this.count );
+};
