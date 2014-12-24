@@ -1,11 +1,11 @@
 var assert = require( 'assert' );
 var CountStream = require( './countstream' );
-var countStream = new CountStream( 'example' );
+var countStream = new CountStream( 'var' );
 var fs = require( 'fs' );
 var passed = 0;
 
 countStream.on( 'total', function( count ) {
-  assert.equal( count, 1 );
+  assert.equal( count, 6 );
   passed += 1;
 });
 
