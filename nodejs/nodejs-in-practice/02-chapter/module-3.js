@@ -1,4 +1,4 @@
-var myClass = require( './myClass' );
+var myClass = require( './myclass' );
 var module2 = require( './module-2' );
 
 console.log( myClass.method());
