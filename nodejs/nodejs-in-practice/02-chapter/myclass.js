@@ -12,5 +12,5 @@ module.exports = myClass;
 
 ///////////// Methods
 function method() {
-  return 'Hello';
+  return 'Hello from myclass.js';
 }
