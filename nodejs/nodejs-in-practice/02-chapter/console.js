@@ -9,3 +9,8 @@ console.log( 'Hello:', name );
 console.log( 'Hello:', user );
 
 console.error( 'Error, bad user:', user );
+
+// to save errors messages:
+// node console.js 2> error-file.log
+// 1> standard output
+// 2> error output
