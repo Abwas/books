@@ -7,3 +7,6 @@ console.log( buf.toString());
 
 var encoded = buf.toString( 'base64' );
 console.log( encoded );
+
+var shortEncoded = Buffer( user + ':' + pass ).toString( 'base64' );
+console.log( shortEncoded );
