@@ -98,6 +98,10 @@ app.get( '/v3/users/:v3Username', function( req, res, next ) {
   return res.render( 'user', req.user );
 });
 
+app.get( '/v3/admin/:v3Username', function( req, res, next ) {
+  return res.render( 'admin', req.user );
+});
+
 ///////////// end of v3 API
 
 ///////////// v4 API
