@@ -34,25 +34,52 @@ var findUserByUsername = function( username, callback ) {
   return callback( null, users[ username ]);
 };
 
-///////////// v1 API
-app.get( '/v1/users/:username', function( req, res, next ) {
+// ///////////// v1 API
+// app.get( '/v1/users/:username', function( req, res, next ) {
+//   var username = req.params.username;
+//   findUserByUsername( username, function( error, user ) {
+//     if ( error ) return next( error );
+//     return res.render( 'user', user );
+//   });
+// });
+
+// app.get( '/v1/admin/:username', function( req, res, next ) {
+//   var username = req.params.username;
+//   findUserByUsername( username, function( err, user ) {
+//     if ( err ) return next( err );
+//     return res.render( 'admin', user );
+//   });
+// });
+
+// app.use( errorhandler());
+
+// var server = app.listen( app.get( 'port' ), function() {
+//   console.log( 'Express server listening on port ' + server.address().port );
+// });
+
+// ///////////// end of v1 API
+
+///////////// v2 API
+var findUserByUsernameMiddleware = function( req, res, next ) {
   var username = req.params.username;
-  findUserByUsername( username, function( error, user ) {
-    if ( error ) return next( error );
-    return res.render( 'user', user );
-  });
-});
 
-app.get( '/v1/admin/:username', function( req, res, next ) {
-  var username = req.params.username;
-  findUserByUsername( username, function( err, user ) {
-    if ( err ) return next( err );
-    return res.render( 'admin', user );
-  });
-});
+  if ( username ) {
+    console.log( 'Username was detected:', username );
+    findUserByUsername( username, function( err, user ) {
+      if ( error ) return next( err );
+      req.user = user;
+      return next();
+    });
+  } else {
+    return next();
+  }
 
-app.use( errorhandler());
+};
 
-var server = app.listen( app.get( 'port' ), function() {
-  console.log( 'Express server listening on port ' + server.address().port );
-});
+///////////// end of v2 API
+
+///////////// v3 API
+///////////// end of v3 API
+
+///////////// v4 API
+///////////// end of v4 API
