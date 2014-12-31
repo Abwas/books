@@ -84,8 +84,28 @@ var findUserByUsername = function( username, callback ) {
 
 // ///////////// end of v2 API
 
-///////////// v3 API
-app.param( 'v3Username', function( req, res, next, username ) {
+// ///////////// v3 API
+// app.param( 'v3Username', function( req, res, next, username ) {
+//   console.log( 'Username was detected:', username );
+//   findUserByUsername( username, function( err, user ) {
+//     if ( err ) return next( err );
+//     req.user = user;
+//     return next();
+//   });
+// });
+
+// app.get( '/v3/users/:v3Username', function( req, res, next ) {
+//   return res.render( 'user', req.user );
+// });
+
+// app.get( '/v3/admin/:v3Username', function( req, res, next ) {
+//   return res.render( 'admin', req.user );
+// });
+
+// ///////////// end of v3 API
+
+///////////// v4 API
+router.param( 'username', function( req, res, next, username ) {
   console.log( 'Username was detected:', username );
   findUserByUsername( username, function( err, user ) {
     if ( err ) return next( err );
@@ -94,17 +114,16 @@ app.param( 'v3Username', function( req, res, next, username ) {
   });
 });
 
-app.get( '/v3/users/:v3Username', function( req, res, next ) {
+router.get( '/users/:username', function( req, res, next ) {
   return res.render( 'user', req.user );
 });
 
-app.get( '/v3/admin/:v3Username', function( req, res, next ) {
+router.get( '/admin/:username', function( req, res, next ) {
   return res.render( 'admin', req.user );
 });
 
-///////////// end of v3 API
+app.use( '/v4', router );
 
-///////////// v4 API
 ///////////// end of v4 API
 
 app.use( errorhandler());
