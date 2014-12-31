@@ -76,6 +76,12 @@ app.get( '/v2/users/:username',
     return res.render( 'user', req.user );
 });
 
+app.get( '/v2/admin/:username',
+  findUserByUsernameMiddleware,
+  function( req, res, next ) {
+    return res.render( 'admin', req.user );
+});
+
 ///////////// end of v2 API
 
 ///////////// v3 API
