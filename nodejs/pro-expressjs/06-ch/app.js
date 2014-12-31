@@ -34,6 +34,7 @@ var findUserByUsername = function( username, callback ) {
   return callback( null, users[ username ]);
 };
 
+///////////// v1 API
 app.get( '/v1/users/:username', function( req, res, next ) {
   var username = req.params.username;
   findUserByUsername( username, function( error, user ) {
@@ -42,7 +43,13 @@ app.get( '/v1/users/:username', function( req, res, next ) {
   });
 });
 
-
+app.get( '/v1/admin/:username', function( req, res, next ) {
+  var username = req.params.username;
+  findUserByUsername( username, function( err, user ) {
+    if ( err ) return next( err );
+    return res.render( 'admin', user );
+  });
+});
 
 app.use( errorhandler());
 
