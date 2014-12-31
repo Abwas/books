@@ -53,38 +53,51 @@ var findUserByUsername = function( username, callback ) {
 
 // ///////////// end of v1 API
 
-///////////// v2 API
-var findUserByUsernameMiddleware = function( req, res, next ) {
-  var username = req.params.username;
+// ///////////// v2 API
+// var findUserByUsernameMiddleware = function( req, res, next ) {
+//   var username = req.params.username;
 
-  if ( username ) {
-    console.log( 'Username was detected:', username );
-    findUserByUsername( username, function( err, user ) {
-      if ( err ) return next( err );
-      req.user = user;
-      return next();
-    });
-  } else {
-    return next();
-  }
+//   if ( username ) {
+//     console.log( 'Username was detected:', username );
+//     findUserByUsername( username, function( err, user ) {
+//       if ( err ) return next( err );
+//       req.user = user;
+//       return next();
+//     });
+//   } else {
+//     return next();
+//   }
 
-};
+// };
 
-app.get( '/v2/users/:username',
-  findUserByUsernameMiddleware,
-  function( req, res, next ) {
-    return res.render( 'user', req.user );
-});
+// app.get( '/v2/users/:username',
+//   findUserByUsernameMiddleware,
+//   function( req, res, next ) {
+//     return res.render( 'user', req.user );
+// });
 
-app.get( '/v2/admin/:username',
-  findUserByUsernameMiddleware,
-  function( req, res, next ) {
-    return res.render( 'admin', req.user );
-});
+// app.get( '/v2/admin/:username',
+//   findUserByUsernameMiddleware,
+//   function( req, res, next ) {
+//     return res.render( 'admin', req.user );
+// });
 
-///////////// end of v2 API
+// ///////////// end of v2 API
 
 ///////////// v3 API
+app.param( 'v3Username', function( req, res, next, username ) {
+  console.log( 'Username was detected:', username );
+  findUserByUsername( username, function( err, user ) {
+    if ( err ) return next( err );
+    req.user = user;
+    return next();
+  });
+});
+
+app.get( '/v3/users/:v3Username', function( req, res, next ) {
+  return res.render( 'user', req.user );
+});
+
 ///////////// end of v3 API
 
 ///////////// v4 API
