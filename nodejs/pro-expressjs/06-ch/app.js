@@ -51,12 +51,6 @@ var findUserByUsername = function( username, callback ) {
 //   });
 // });
 
-// app.use( errorhandler());
-
-// var server = app.listen( app.get( 'port' ), function() {
-//   console.log( 'Express server listening on port ' + server.address().port );
-// });
-
 // ///////////// end of v1 API
 
 ///////////// v2 API
@@ -66,7 +60,7 @@ var findUserByUsernameMiddleware = function( req, res, next ) {
   if ( username ) {
     console.log( 'Username was detected:', username );
     findUserByUsername( username, function( err, user ) {
-      if ( error ) return next( err );
+      if ( err ) return next( err );
       req.user = user;
       return next();
     });
@@ -76,6 +70,12 @@ var findUserByUsernameMiddleware = function( req, res, next ) {
 
 };
 
+app.get( '/v2/users/:username',
+  findUserByUsernameMiddleware,
+  function( req, res, next ) {
+    return res.render( 'user', req.user );
+});
+
 ///////////// end of v2 API
 
 ///////////// v3 API
@@ -83,3 +83,9 @@ var findUserByUsernameMiddleware = function( req, res, next ) {
 
 ///////////// v4 API
 ///////////// end of v4 API
+
+app.use( errorhandler());
+
+var server = app.listen( app.get( 'port' ), function() {
+  console.log( 'Express server listening on port ' + server.address().port );
+});
