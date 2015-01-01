@@ -15,3 +15,4 @@ app.set( 'view engine', 'jade' );
 
 app.use( logger( 'combined' ));
 app.use( favicon( path.join( __dirname, 'public', 'favicon.ico' )));
+app.use( bodyParser.urlencoded({ extended : true }));
