@@ -76,6 +76,6 @@ console.log( guitarX ); // Object {}
 
 ```js
 var guitar0 = Object.create( Object.prototype );
-console.log( guitarX.toString() ); // [object Object]
-console.log( guitarX ); // Object {}
+console.log( guitar0.toString() ); // [object Object]
+console.log( guitar0 ); // Object {}
 ```
