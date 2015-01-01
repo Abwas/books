@@ -68,7 +68,7 @@ console.log( guitar === guitar2 ); // false
 
 ```js
 var guitarX = Object.create( null );
-console.log( guitarX.toString() ); // TypeError: undefined is not a function
+console.log( guitarX.toString()); // TypeError: undefined is not a function
 console.log( guitarX ); // Object {}
 ```
 
@@ -76,6 +76,6 @@ console.log( guitarX ); // Object {}
 
 ```js
 var guitar0 = Object.create( Object.prototype );
-console.log( guitar0.toString() ); // [object Object]
+console.log( guitar0.toString()); // [object Object]
 console.log( guitar0 ); // Object {}
 ```
