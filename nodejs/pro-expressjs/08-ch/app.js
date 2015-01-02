@@ -4,9 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require( 'fs' );
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+var largeImagePath = path.join( __dirname, 'files', 'large-image.jpg' );
 
 var app = express();
 
@@ -122,6 +125,11 @@ app.get( '/', function( req, res ) {
 app.get( '/some', function( req, res ) {
   res.redirect( '/render' );
   // res.redirect( 301, '/render' );
+});
+
+app.get( '/non-stream', function( req, res ) {
+  var file = fs.readFileSync( largeImagePath );
+  res.end( file );
 });
 
 // catch 404 and forward to error handler
