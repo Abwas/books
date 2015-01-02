@@ -65,6 +65,18 @@ app.use( function( req, res, next ) {
   next( err );
 });
 
+// Error handlers
+// will print stacktrace
+if ( app.get( 'env' ) === 'development' ) {
+  app.use( function( err, req, res, next ) {
+    res.status( err.status || 500 );
+    res.render( 'error', {
+      message : err.message,
+      error : err
+    });
+  });
+}
+
 app.set( 'port', process.env.PORT || 3000 );
 
 var server = app.listen( app.get( 'port' ), function() {
