@@ -38,6 +38,11 @@ app.get( '/locals', function( req, res ) {
   res.render( 'index' );
 });
 
+app.get( '/set-html', function( req, res ) {
+  res.set( 'content-type', 'text/html' );
+  res.end( '<html><body><h1>Express res.set()</h1></body></html>' );
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
