@@ -119,6 +119,11 @@ app.get( '/', function( req, res ) {
     ]);
 });
 
+app.get( '/some', function( req, res ) {
+  res.redirect( '/render' );
+  // res.redirect( 301, '/render' );
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
