@@ -77,6 +77,12 @@ app.get( '/send-error', function( req, res ) {
     });
 });
 
+app.get( '/send-buf', function( req, res ) {
+  res
+    .set( 'content-type', 'text/plain')
+    .send( new Buffer( 'text data that will be converted into Buffer' ));
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
