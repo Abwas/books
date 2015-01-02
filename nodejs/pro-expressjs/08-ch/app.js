@@ -143,6 +143,16 @@ app.get( '/stream1', function( req, res ) {
   stream.pipe( res );
 });
 
+app.get( '/stream2', function( req, res ) {
+  var stream = fs.createReadStream( largeImagePath );
+  stream.on( 'data', function( data ) {
+    res.write( data );
+  });
+  stream.on( 'end', function() {
+    res.end();
+  });
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
