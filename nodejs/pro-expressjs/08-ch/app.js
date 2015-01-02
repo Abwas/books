@@ -132,6 +132,12 @@ app.get( '/non-stream', function( req, res ) {
   res.end( file );
 });
 
+app.get( '/non-stream2', function( req, res ) {
+  var file = fs.readFile( largeImagePath, function( error, data ) {
+    res.end( data );
+  });
+});;
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
