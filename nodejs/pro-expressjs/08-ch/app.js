@@ -83,6 +83,16 @@ app.get( '/send-buf', function( req, res ) {
     .send( new Buffer( 'text data that will be converted into Buffer' ));
 });
 
+app.get( '/json', function( req, res ) {
+  res
+    .status(200)
+    .json([
+      { title: 'Practical Node.js', tags: 'node.js express.js' },
+      { title: 'Rapid Prototyping with JS', tags: 'backbone.js node.js mongodb' },
+      { title: 'JavaScript: The Good Parts', tags: 'javascript' }
+    ]);
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
