@@ -27,6 +27,11 @@ app.get( '/search', function( req, res ) {
   res.end( JSON.stringify( req.query ) + '\r\n' );
 });
 
+app.get( '/params/:role/:name/:status', function( req, res ) {
+  console.log( 'req.params', req.params );
+  console.log( 'req.route', req.route );
+  res.end();
+});
 
 app.set( 'port', process.env.PORT || 3000 );
 
