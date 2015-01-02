@@ -138,6 +138,11 @@ app.get( '/non-stream2', function( req, res ) {
   });
 });;
 
+app.get( '/stream1', function( req, res ) {
+  var stream = fs.createReadStream( largeImagePath );
+  stream.pipe( res );
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
