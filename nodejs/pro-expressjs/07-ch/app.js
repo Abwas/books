@@ -58,6 +58,13 @@ app.get( '/signed-cookies', function( req, res ) {
   res.status( 200 ).send( 'cookies are:', req.signedCookies );
 });
 
+// Catch 404 and forward to error handler
+app.use( function( req, res, next ) {
+  var err = new Error( 'Ooops... Not found' );
+  err.status = 404;
+  next( err );
+});
+
 app.set( 'port', process.env.PORT || 3000 );
 
 var server = app.listen( app.get( 'port' ), function() {
