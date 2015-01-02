@@ -93,6 +93,22 @@ app.get( '/json', function( req, res ) {
     ]);
 });
 
+app.get( '/api/v1/stories/:id', function( req, res, next ) {
+  var stories = {
+    'dt' : {
+      'start' : 1985,
+      'end'   : '-'
+    }
+  }
+
+  if ( req.params.id === 13 )
+    req.story = stories.dt;
+
+  next();
+}, function( req, res ) {
+  res.json( req.story );
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
