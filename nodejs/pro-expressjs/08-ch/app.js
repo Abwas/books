@@ -43,6 +43,20 @@ app.get( '/set-html', function( req, res ) {
   res.end( '<html><body><h1>Express res.set()</h1></body></html>' );
 });
 
+app.get('/set-csv', function( req, res ) {
+  var body = 'title, tags\n' +
+  'Practical Node.js, node.js express.js\n' +
+  'Rapid Prototyping with JS, backbone.js node.js mongodb\n' +
+  'JavaScript: The Good Parts, javascript\n';
+
+  res.set({'Content-Type': 'text/csv',
+    'Content-Length': body.length,
+    'Set-Cookie': ['type=reader', 'language=javascript']
+  });
+  
+  res.end(body);
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
