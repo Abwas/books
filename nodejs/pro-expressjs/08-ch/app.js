@@ -109,6 +109,16 @@ app.get( '/api/v1/stories/:id', function( req, res, next ) {
   res.json( req.story );
 });
 
+app.get( '/', function( req, res ) {
+  res
+    .status( 200 )
+    .jsonp([
+      { title: 'Express.js Guide', tags: 'node.js express.js' },
+      { title: 'Rapid Prototyping with JS', tags: 'backbone.js, node.js, mongodb' },
+      { title: 'JavaScript: The Good Parts', tags: 'javascript' }
+    ]);
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
