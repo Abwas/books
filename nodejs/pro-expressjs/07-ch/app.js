@@ -21,3 +21,15 @@ app.use( cookieParser( 'abc' ));
 app.use( express.static( path.join( __dirname, 'public' )));
 
 app.use( '/', routes );
+
+app.get( '/search', function( req, res ) {
+  console.log( req.query );
+  res.end( JSON.stringify( req.query ) + '\r\n' );
+});
+
+
+app.set( 'port', process.env.PORT || 3000 );
+
+var server = app.listen( app.get( 'port' ), function() {
+  console.log( 'Express server on port ', server.address().port );
+});
