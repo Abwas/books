@@ -53,8 +53,12 @@ app.get('/set-csv', function( req, res ) {
     'Content-Length': body.length,
     'Set-Cookie': ['type=reader', 'language=javascript']
   });
-  
+
   res.end(body);
+});
+
+app.get( '/status', function( req, res ) {
+  res.status( 200 ).end();
 });
 
 // catch 404 and forward to error handler
