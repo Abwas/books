@@ -38,6 +38,14 @@ app.post( '/body', function( req, res ) {
   res.end( JSON.stringify( req.body ) + '\r\n' );
 });
 
+app.get( '/cookies', function( req, res ) {
+  if ( !req.cookies.counter )
+    res.cookie( 'counter' , 0 );
+  else
+    res.cookie( 'counter', parseInt( req.cookies.counter, 10 ) + 1 );
+  res.status( 200 ).send( 'cookies are: ', req.cookies );
+});
+
 app.set( 'port', process.env.PORT || 3000 );
 
 var server = app.listen( app.get( 'port' ), function() {
