@@ -46,6 +46,18 @@ app.get( '/cookies', function( req, res ) {
   res.status( 200 ).send( 'cookies are: ', req.cookies );
 });
 
+app.get( '/signed-cookies', function( req, res ) {
+  if ( !req.signedCookies.counter )
+    res.cookie( 'counter', 0, { signed : true });
+  else
+    res.cookie( 
+      'counter', 
+      parseInt( req.signedCookies.counter, 10 ) + 1, 
+      { signed : true }
+    );
+  res.status( 200 ).send( 'cookies are:', req.signedCookies );
+});
+
 app.set( 'port', process.env.PORT || 3000 );
 
 var server = app.listen( app.get( 'port' ), function() {
