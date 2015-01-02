@@ -77,6 +77,20 @@ if ( app.get( 'env' ) === 'development' ) {
   });
 }
 
+// Production error handler
+// No stacktraces leaked to user
+app.use( function( err, req, res, next ) {
+  res.status( err.status || 500 );
+  res.render( 'error', {
+    message : err.message,
+    error : {}
+  });
+});
+
+module.exports = app;
+
+var debug = require( 'debug' )( 'request' );
+
 app.set( 'port', process.env.PORT || 3000 );
 
 var server = app.listen( app.get( 'port' ), function() {
