@@ -33,6 +33,11 @@ app.get( '/params/:role/:name/:status', function( req, res ) {
   res.end();
 });
 
+app.post( '/body', function( req, res ) {
+  console.log( req.body );
+  res.end( JSON.stringify( req.body ) + '\r\n' );
+});
+
 app.set( 'port', process.env.PORT || 3000 );
 
 var server = app.listen( app.get( 'port' ), function() {
