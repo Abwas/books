@@ -100,6 +100,8 @@ var myProduct = {
 };
 ```
 
+* Há uma convensão de se iniciar novos *protótipos* com letra maiúscula, assim como as classes em linguagens mais tradicionais
+
 * Criando novos objetos com `Object.create()`
 
 ```js
@@ -130,11 +132,86 @@ product1.setName( 'MusicMan' );
 product1.setPrice( 3100 );
 
 console.log( product1.name() + ' - $' + product1.price());
+// "MusicMan - $3100"
 
 var product2 = Object.create( Product );
 product2.setName( 'Ibanez' );
 product2.setPrice( 1300 );
 
 console.log( product2.name() + ' - $' + product2.price());
+// "Ibanez - $1300"
 ```
 
+* Para não termos que definir todos as propriedades de um novo objeto, podemos criar um método de inicialização:
+
+```js
+var Product = {
+  
+  _price   : 0,
+  _name    : '',
+  
+  price    : function() {
+    return this._price;
+  },
+  
+  name     : function() {
+    return this._name;
+  },
+  
+  setPrice : function( p ) {
+    this._price = p;
+  },
+  
+  setName  : function( n ) {
+    this._name = n;
+  },
+  
+  init     : function( name, price ) {
+    this._name  = name;
+    this._price = price;
+    return this;
+  }
+};
+
+var oneProduct = Object.create( Product ).init( 'Mayones', 3311 );
+console.log( oneProduct.name()); // "Mayones"
+```
+
+* Podemos abstrair ainda mais e encapsular a criação e inicialização de novos objetos
+
+```js
+var Product = {
+  
+  _price   : 0,
+  _name    : '',
+  
+  price    : function() {
+    return this._price;
+  },
+  
+  name     : function() {
+    return this._name;
+  },
+  
+  setPrice : function( p ) {
+    this._price = p;
+  },
+  
+  setName  : function( n ) {
+    this._name = n;
+  },
+  
+  init     : function( name, price ) {
+    this._name  = name;
+    this._price = price;
+    return this;
+  },
+  
+  create   : function( name, price ) {
+    return Object.create( this ).init( name, price );
+  }
+};
+
+var otherProduct = Product.create( 'Jackson', 2560 );
+console.log( otherProduct.price()); // 2560
+```
