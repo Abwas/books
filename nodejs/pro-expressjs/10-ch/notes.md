@@ -12,3 +12,35 @@
 ## Routes
 
 * Para melhor suporte entre plataformas, é bom utilizar `path.join( 'algumaPasta', 'algumArquivo' )`, pois assim será gerado o caminho relativo ao da plataforma que o código está sendo utilizado.
+* Exportando módulos com `index.js`
+
+```js
+module.exports = {
+  stories : require( '/stories' ),
+  users   : require( './users' )
+};
+```
+
+`/stories/index.js` ficaria assim:
+
+```js
+exports.findStories = function(req, res, next) {
+  // ...
+};
+exports.createStory = function(req, res, next) {
+  // ...
+};
+// ...
+```
+
+* Para organizar de forma ainda melhor, podemos usar a classe `Router`, vista no cap.6
+* Podemos também separar cada funcionalidade para seu arquivo próprio, ficando assim:
+
+`routes-exports/find-stories.js`
+
+```js
+exports.findStories = function( ops ) {
+  ops = ops || '';
+  console.log( 'findStories module logic' + ops );
+};
+```
