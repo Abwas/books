@@ -44,3 +44,29 @@ exports.findStories = function( ops ) {
   console.log( 'findStories module logic' + ops );
 };
 ```
+
+## Combining Middleware and Routes
+
+* Podemos abstrair um middleware para ser utilizada em diferentes casos, como uma função que retorna uma função ([state monad from functional programming](http://en.wikipedia.org/wiki/Monad_(functional_programming)#State_monads))
+
+```js
+var requiredParam = function( param ) {
+  var paramName = '';
+  if ( param === '_token' )
+    paramname = 'token';
+  else if ( param === 'api_key' )
+    paramName = 'API key'
+  return function( req, res, next ) {
+    if ( !re.query[ params ])
+      return next( new Error( 'No ' + paramName + ' was provided' ));
+    next();
+  }
+};
+
+app.get( '/admin', requiredParam( '_token' ), function( req, res, next ) {
+  res.render( 'admin' );
+});
+
+// Middleware that applied to all /api/* calls
+app.use( '/api/*', requiredParam( 'api_key' ));
+```
