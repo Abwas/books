@@ -358,3 +358,11 @@ var bddjs = Object.create( Book ).extend({
 
 console.log( bddjs.author() + ' ' + bddjs.numPages());
 ```
+
+* Vantagens do conceito de objetos e protótipos sobre métodos baseados em classes estáticas:
+  * **Unificação da herança e instanciação** com `Object.create()`
+  * **Herança de valores**
+  * **Modificação em tempo de execução dos protótipos**
+  * **Simplicidade**
+
+* Gerenciadores de arquivos: AMD, CommonJS, e outros.
