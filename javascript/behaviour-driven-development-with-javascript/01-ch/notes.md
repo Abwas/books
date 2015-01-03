@@ -39,7 +39,7 @@ function memberOrder( a, b ) {
 [ 'Douglas', 'Eric', 'John', 'Chris' ].sort( memberOrder );
 // [ "Chris", "Douglas", "Eric", "John" ]
 ```
-* Old way to OOP in JS
+* Maneira tradicional de fazer OOP no JS
 
 ```js
 var Product = function( name ) {
@@ -51,4 +51,25 @@ Product.prototype.showName = function() {
 
 var myProduct = new Product( 'MusicMan Majesty' );
 myProduct.showName(); // "MusicMan Majesty"
+```
+
+* Nova maneira de fazer OOP no JS, `Object.create()`, proposta por Douglas Crockford
+* Poyfill para `Object.create()`
+
+```js
+if ( !Object.create ) {
+  
+  Object.create = function ( o ) {
+    
+    if ( arguments.length > 1 ) {
+      throw new Error( 'Object.create implementation only accepts the first parameter' );
+    }
+    
+    function F() {}
+    F.prototype = o;
+    return new F();
+    
+  };
+  
+}
 ```
