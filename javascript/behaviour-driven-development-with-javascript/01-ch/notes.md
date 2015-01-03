@@ -215,3 +215,68 @@ var Product = {
 var otherProduct = Product.create( 'Jackson', 2560 );
 console.log( otherProduct.price()); // 2560
 ```
+
+* Podemos usar apenas `Object.create()` para herança
+
+```js
+var Product = {
+
+  _price   : 0,
+  _name    : '',
+
+  price    : function() {
+    return this._price;
+  },
+
+  name     : function() {
+    return this._name;
+  },
+
+  setPrice : function( p ) {
+    this._price = p;
+  },
+
+  setName  : function( n ) {
+    this._name = n;
+  },
+
+  init     : function( name, price ) {
+    this._name  = name;
+    this._price = price;
+    return this;
+  },
+
+  create   : function( name, price ) {
+    return Object.create( this ).init( name, price );
+  }
+};
+
+// Book herda todos os métodos e propriedades de Product
+var Book = Product.create();
+
+// Propriedades de Book
+Book._author = null;
+Book._numPages = null;
+
+// Métodos de Book
+Book.setAuthor = function( author ) {
+  this._author = author;
+};
+Book.setNumPages = function( num_pages ) {
+  this._numPages = num_pages;
+};
+Book.author = function() {
+  return this._author;
+};
+Book.numPages = function() {
+  return this._numPages;
+};
+
+// criando um livro
+var bddjs = Book.create();
+
+bddjs.setAuthor( 'Marco Emrich' );
+bddjs.setNumPages( 113 );
+
+console.log( bddjs.author() + ' ' + bddjs.numPages());
+```
