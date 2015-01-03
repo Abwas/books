@@ -39,3 +39,16 @@ function memberOrder( a, b ) {
 [ 'Douglas', 'Eric', 'John', 'Chris' ].sort( memberOrder );
 // [ "Chris", "Douglas", "Eric", "John" ]
 ```
+* Old way to OOP in JS
+
+```js
+var Product = function( name ) {
+  this.name = name;
+};
+Product.prototype.showName = function() {
+  console.log( this.name );
+};
+
+var myProduct = new Product( 'MusicMan Majesty' );
+myProduct.showName(); // "MusicMan Majesty"
+```
