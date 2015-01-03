@@ -99,3 +99,42 @@ var myProduct = {
 
 };
 ```
+
+* Criando novos objetos com `Object.create()`
+
+```js
+var Product = {
+  
+  _price   : 0,
+  _name    : '',
+  
+  price    : function() {
+    return this._price;
+  },
+  
+  name     : function() {
+    return this._name;
+  },
+  
+  setPrice : function( p ) {
+    this._price = p;
+  },
+  
+  setName  : function( n ) {
+    this._name = n;
+  }
+};
+
+var product1 = Object.create( Product );
+product1.setName( 'MusicMan' );
+product1.setPrice( 3100 );
+
+console.log( product1.name() + ' - $' + product1.price());
+
+var product2 = Object.create( Product );
+product2.setName( 'Ibanez' );
+product2.setPrice( 1300 );
+
+console.log( product2.name() + ' - $' + product2.price());
+```
+
