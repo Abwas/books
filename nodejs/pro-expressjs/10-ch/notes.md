@@ -47,7 +47,7 @@ exports.findStories = function( ops ) {
 
 ## Combining Middleware and Routes
 
-* Podemos abstrair um middleware para ser utilizada em diferentes casos, como uma função que retorna uma função ([state monad from functional programming](http://en.wikipedia.org/wiki/Monad_(functional_programming)#State_monads))
+* Podemos abstrair um middleware para ser utilizado em diferentes casos, como uma função que retorna uma função ([state monad from functional programming](http://en.wikipedia.org/wiki/Monad_(functional_programming)#State_monads))
 
 ```js
 var requiredParam = function( param ) {
