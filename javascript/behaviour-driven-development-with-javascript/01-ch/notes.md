@@ -280,3 +280,81 @@ bddjs.setNumPages( 113 );
 
 console.log( bddjs.author() + ' ' + bddjs.numPages());
 ```
+
+* Podemos criar uma função `extend` para deixar a herança mais conveniente
+* Usando ES5, não precisamos definir esse novo método, pois `Object.create()` já possibilita que passemos um segundo argumento que irá extender as propriedades/métodos para o novo objeto criado.
+
+* **dica**: A biblioteca **underscore.js** possui o método extend implementado.
+
+* Criando nosso método `extend`
+
+```js
+Object.prototype.extend = function( props ) {
+  for ( var prop in props ) {
+    this[ prop ] = props[ prop ];
+  }
+  
+  return this;
+};
+```
+
+* Usando nosso método `extend` para gerar outros objetos
+
+```js
+Object.prototype.extend = function( props ) {
+  for ( var prop in props ) {
+    this[ prop ] = props[ prop ];
+  }
+  
+  return this;
+};
+
+var Product = {
+
+  _price   : 0,
+  _name    : '',
+
+  price    : function() {
+    return this._price;
+  },
+
+  name     : function() {
+    return this._name;
+  },
+
+  setPrice : function( p ) {
+    this._price = p;
+  },
+
+  setName  : function( n ) {
+    this._name = n;
+  }
+};
+
+var Book = Object.create( Product ).extend({
+  
+  _author : null,
+  _numPages : null,
+  setAuthor : function( author ) {
+    this._author = author;
+  },
+  setNumPages : function( num_pages ) {
+    this._numPages = num_pages;
+  },
+  author : function() {
+    return this._author;
+  },
+  numPages : function() {
+    return this._numPages;
+  }
+  
+});
+
+// criando um livro
+var bddjs = Object.create( Book ).extend({
+  _author : 'Marco Emrich',
+  _numPages : 113
+});
+
+console.log( bddjs.author() + ' ' + bddjs.numPages());
+```
