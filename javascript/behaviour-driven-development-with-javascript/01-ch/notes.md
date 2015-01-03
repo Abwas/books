@@ -73,3 +73,29 @@ if ( !Object.create ) {
   
 }
 ```
+
+* Para mais polyfills da ES5: [es5-shim](https://github.com/es-shims/es5-shim)
+* Experiência com projetos OOP nos ensina que devemos separar **estados internos** de **interfaces exteriores**, usando métodos *getter* e *setter*
+* Para mostrar que uma propriedade é privada, podemos nomeá-la com *undescore*.
+* Para retornar essa propriedade, podemos apenas declarar a função com o mesmo nome desta.
+* Para modificarmos o valor da propriedade, nomeamos a função com `set` + `nomeDaPropriedade`.
+* Exemplificando:
+
+```js
+var myProduct = {
+  _price  : 3100,
+  _name   : 'MusicMan JP13',
+  
+  price   : function() {
+    return this._price;
+ },
+  
+ setPrice : function( p ) {
+   if ( p <= 0 )
+     throw new Error( 'Price must be positive' );
+   
+   this._price = p; 
+ }
+
+};
+```
