@@ -42,4 +42,12 @@
 * o tamanho do passo é definido pela sua experiência
 * tente adivinhar qual será o estado das notificações e quais as mensagens que serão retornadas
 
-## 2.3.2 Red-Green-Factor
+## 2.3.2 Red-Green-Refactor
+
+* **Red-Green-Refactor** é o mantra do TDD/BDD
+* Foque primeiro no desenvolvimento da interface da sua aplicação (fase *red*)
+* Foque depois na implementação da sua aplicação (fase *green*)
+
+## 2.3.3 Coding Error-Driven
+
+* A partir das mensagens de erro você saberá qual o próximo passo a ser implementado na sua aplicação
