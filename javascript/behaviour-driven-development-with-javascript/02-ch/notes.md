@@ -65,3 +65,5 @@
 
 ## 2.5 Refactoring
 
+* Devemos primeiro criar o código mais simples que irá fazer o teste passar
+* Após isso, avaliamos se é necessário alterar números e valores *hard-coded*, por variáveis que deixarão nosso código muito mais semântico e manutenível

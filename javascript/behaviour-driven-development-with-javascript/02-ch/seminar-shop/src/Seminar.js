@@ -11,6 +11,10 @@ var Seminar = {
     return this._price;
   },
 
+  grossPrice : function() {
+    return this.netPrice() * 1.20;
+  },
+
   init : function( name, price ) {
     this._name = name;
     this._price = price;
