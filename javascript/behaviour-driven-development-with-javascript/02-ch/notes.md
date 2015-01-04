@@ -28,3 +28,8 @@
 * Use as mensagens de erro para guiar o desenvolvimento da app - ex: *ReferenceError: Seminar is not defined*, logo, devemos definir `Seminar`!
 * Crie agora o arquivo que vai para produção (não se esqueça de adicioná-lo no arquivo html)
 * **dica**: sempre use *namespaces* para evitar o escopo global e *"use strict"*
+
+## 2.3 Using an expectation
+
+* Volte para o arquivo de teste para fazê-lo falhar
+* Sem uma expectation, sabemos apenas que o teste não tem erros bobos, mas não temos certeza se está sendo criado as informações que necessitamos de fato
