@@ -1,3 +1,5 @@
+var VAT_RATE = 1.2;
+
 var Seminar = {
   create : function( name, price ) {
     return Object.create( Seminar ).init( name, price );
@@ -12,7 +14,7 @@ var Seminar = {
   },
 
   grossPrice : function() {
-    return this.netPrice() * 1.20;
+    return this.netPrice() * VAT_RATE;
   },
 
   init : function( name, price ) {

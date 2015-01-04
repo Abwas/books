@@ -67,3 +67,9 @@
 
 * Devemos primeiro criar o código mais simples que irá fazer o teste passar
 * Após isso, avaliamos se é necessário alterar números e valores *hard-coded*, por variáveis que deixarão nosso código muito mais semântico e manutenível
+
+Refatorar é:
+
+> "Uma técnica para se reestruturar um corpo de código existente, alterando sua estrutura interna, sem alterar seu comportamento externo."
+
+* Podemos usar nomes de variáveis TODOS_MAIUSCULOS para mostrar que essa variável é uma constante
