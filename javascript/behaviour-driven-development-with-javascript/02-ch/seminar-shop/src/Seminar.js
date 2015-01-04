@@ -3,9 +3,12 @@ var Seminar = {
     return Object.create( Seminar ).init( name );
   },
 
-  name : function() {},
+  name : function() {
+    return this._name;
+  },
 
   init : function( name ) {
+    this._name = name;
     return this;
   }
 };
