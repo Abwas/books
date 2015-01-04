@@ -33,3 +33,13 @@
 
 * Volte para o arquivo de teste para fazê-lo falhar
 * Sem uma expectation, sabemos apenas que o teste não tem erros bobos, mas não temos certeza se está sendo criado as informações que necessitamos de fato
+* implemete a `expectation` para verificar
+* implemente a função para retornar o que é esperado
+
+## 2.3 Baby Steps
+
+* quanto menor os passos, mais rápido o feedback que você terá se está certo ou não
+* o tamanho do passo é definido pela sua experiência
+* tente adivinhar qual será o estado das notificações e quais as mensagens que serão retornadas
+
+## 2.3.2 Red-Green-Factor
