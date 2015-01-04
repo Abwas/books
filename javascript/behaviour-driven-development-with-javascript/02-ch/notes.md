@@ -22,3 +22,9 @@
 * Geralmente falamos: "it **should** have a name". É comum o uso de **should**
 * O objeto em teste é chamado SUT (Subject Under Test), nomenclatura derivada do TDD
 * o SUT é importante pois cada *spec* dever conter um e apenas um SUT
+* Adicione a referência dos arquivos de teste em `SpecRunner.html` na sua respectiva seção.
+* Remova os arquivos e referências *default*
+* Rode o teste e ele falhará - normal!
+* Use as mensagens de erro para guiar o desenvolvimento da app - ex: *ReferenceError: Seminar is not defined*, logo, devemos definir `Seminar`!
+* Crie agora o arquivo que vai para produção (não se esqueça de adicioná-lo no arquivo html)
+* **dica**: sempre use *namespaces* para evitar o escopo global e *"use strict"*
