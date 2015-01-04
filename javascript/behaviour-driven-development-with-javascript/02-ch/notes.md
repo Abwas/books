@@ -19,3 +19,6 @@
 
 * Sempre comece com os testes
 * Quebre as especificações nas menores partes possíveis para criação dos testes
+* Geralmente falamos: "it **should** have a name". É comum o uso de **should**
+* O objeto em teste é chamado SUT (Subject Under Test), nomenclatura derivada do TDD
+* o SUT é importante pois cada *spec* dever conter um e apenas um SUT
