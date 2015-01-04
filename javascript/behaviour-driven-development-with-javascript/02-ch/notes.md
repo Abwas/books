@@ -51,3 +51,6 @@
 ## 2.3.3 Coding Error-Driven
 
 * A partir das mensagens de erro você saberá qual o próximo passo a ser implementado na sua aplicação
+
+## 2.4 Adding another spec
+
