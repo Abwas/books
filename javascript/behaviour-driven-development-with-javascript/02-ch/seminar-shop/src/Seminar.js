@@ -1,14 +1,19 @@
 var Seminar = {
-  create : function( name ) {
-    return Object.create( Seminar ).init( name );
+  create : function( name, price ) {
+    return Object.create( Seminar ).init( name, price );
   },
 
   name : function() {
     return this._name;
   },
 
-  init : function( name ) {
+  netPrice : function() {
+    return this._price;
+  },
+
+  init : function( name, price ) {
     this._name = name;
+    this._price = price;
     return this;
   }
 };

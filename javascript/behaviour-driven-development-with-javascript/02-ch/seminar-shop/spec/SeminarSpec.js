@@ -1,6 +1,6 @@
 describe( 'Seminar', function() {
   it( 'should have a name', function() {
-    var seminar = Seminar.create( 'JavaScript-Basics' );
+    var seminar = Seminar.create( 'JavaScript-Basics', 499.99 );
     expect( seminar.name()).toEqual( 'JavaScript-Basics' );
   });
 
