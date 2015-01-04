@@ -36,19 +36,19 @@
 * implemete a `expectation` para verificar
 * implemente a função para retornar o que é esperado
 
-## 2.3 Baby Steps
+### 2.3.1 Baby Steps
 
 * quanto menor os passos, mais rápido o feedback que você terá se está certo ou não
 * o tamanho do passo é definido pela sua experiência
 * tente adivinhar qual será o estado das notificações e quais as mensagens que serão retornadas
 
-## 2.3.2 Red-Green-Refactor
+### 2.3.2 Red-Green-Refactor
 
 * **Red-Green-Refactor** é o mantra do TDD/BDD
 * Foque primeiro no desenvolvimento da interface da sua aplicação (fase *red*)
 * Foque depois na implementação da sua aplicação (fase *green*)
 
-## 2.3.3 Coding Error-Driven
+### 2.3.3 Coding Error-Driven
 
 * A partir das mensagens de erro você saberá qual o próximo passo a ser implementado na sua aplicação
 
@@ -56,3 +56,12 @@
 
 * Encontramos um problema: ao adicionar o outro método, tivemos que refatorar o teste anterior por ter mais um parâmetro adicionado a construção do novo objeto.
 * Ver uma forma disso não acontecer
+
+### 2.4.1 Specs in the slaughter house
+
+* Comunicação é a chave para o sucesso do projeto
+* Os codificadores precisam da comunicação para entender as regras de negócios, pois sua tarefa é dividir as requisições (especificações, histórias de usuário, casos de uso, *backlog items*, e *kanban cards*) em especificações possíveis de se codificar.
+* Esse tipo de tarefa é algo que o product owner não pode fazer sozinho
+
+## 2.5 Refactoring
+
