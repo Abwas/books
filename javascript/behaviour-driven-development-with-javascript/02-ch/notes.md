@@ -73,3 +73,9 @@ Refatorar é:
 > "Uma técnica para se reestruturar um corpo de código existente, alterando sua estrutura interna, sem alterar seu comportamento externo."
 
 * Podemos usar nomes de variáveis TODOS_MAIUSCULOS para mostrar que essa variável é uma constante
+
+### 2.5.1 Specs enable refactoring
+
+* Testes fazem com que tenhamos confiança em refatorar nosso código
+* Com testes podemos concetrar em uma parte específica do código
+* Primeiro fazemos nosso código funcionar, depois fazemos a refatoração
