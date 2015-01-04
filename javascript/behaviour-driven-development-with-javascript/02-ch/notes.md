@@ -54,3 +54,5 @@
 
 ## 2.4 Adding another spec
 
+* Encontramos um problema: ao adicionar o outro método, tivemos que refatorar o teste anterior por ter mais um parâmetro adicionado a construção do novo objeto.
+* Ver uma forma disso não acontecer
