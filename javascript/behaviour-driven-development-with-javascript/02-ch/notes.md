@@ -79,3 +79,8 @@ Refatorar é:
 * Testes fazem com que tenhamos confiança em refatorar nosso código
 * Com testes podemos concetrar em uma parte específica do código
 * Primeiro fazemos nosso código funcionar, depois fazemos a refatoração
+
+### 2.5.1 Specs should be readable
+
+* Siga o DRY (Don't Repeat Yourself), ou uma mudança no seu código irá refletir em uma onda de alterações
+* Para suas especificações dos testes, use o princípio **DAMP** (Descriptive And Meaningful Phrases)
