@@ -9,6 +9,7 @@
   "author": "Eric Douglas <eric.douglas.mail@gmail.com> (https://github.com/ericdouglas)",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.1.4",
     "express": "^4.11.0"
   }
 }

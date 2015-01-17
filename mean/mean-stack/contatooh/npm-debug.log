@@ -1,0 +1,136 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'i', 'ejs', '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 warn package.json contatooh@1.0.0 No description
+6 warn package.json contatooh@1.0.0 No repository field.
+7 warn package.json contatooh@1.0.0 No README data
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ 'ejs', null ]
+10 verbose cache add name=undefined spec="ejs" args=["ejs",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'ejs',
+11 verbose parsed url   path: 'ejs',
+11 verbose parsed url   href: 'ejs' }
+12 silly lockFile 75eeca8f-ejs ejs
+13 verbose lock ejs /home/eric/.npm/75eeca8f-ejs.lock
+14 silly lockFile 75eeca8f-ejs ejs
+15 silly lockFile 75eeca8f-ejs ejs
+16 verbose addNamed [ 'ejs', '' ]
+17 verbose addNamed [ null, '*' ]
+18 silly lockFile bcdf6e5f-ejs ejs@
+19 verbose lock ejs@ /home/eric/.npm/bcdf6e5f-ejs.lock
+20 silly addNameRange { name: 'ejs', range: '*', hasData: false }
+21 verbose request where is /ejs
+22 verbose request registry https://registry.npmjs.org/
+23 verbose request id 3a14f4d51168069d
+24 verbose url raw /ejs
+25 verbose url resolving [ 'https://registry.npmjs.org/', './ejs' ]
+26 verbose url resolved https://registry.npmjs.org/ejs
+27 verbose request where is https://registry.npmjs.org/ejs
+28 info trying registry request attempt 1 at 20:55:10
+29 verbose etag "DHMDVGA3VIBVOS74XTCLC9Z0S"
+30 http GET https://registry.npmjs.org/ejs
+31 http 200 https://registry.npmjs.org/ejs
+32 silly registry.get cb [ 200,
+32 silly registry.get   { date: 'Sat, 17 Jan 2015 22:55:11 GMT',
+32 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+32 silly registry.get     etag: '"CSOJK6AL4XLDKZXFKBYUJ1CV0"',
+32 silly registry.get     'content-type': 'application/json',
+32 silly registry.get     'cache-control': 'max-age=60',
+32 silly registry.get     'content-length': '37990',
+32 silly registry.get     'accept-ranges': 'bytes',
+32 silly registry.get     via: '1.1 varnish',
+32 silly registry.get     age: '17',
+32 silly registry.get     'x-served-by': 'cache-atl6229-ATL',
+32 silly registry.get     'x-cache': 'HIT',
+32 silly registry.get     'x-cache-hits': '7',
+32 silly registry.get     'x-timer': 'S1421535311.387087,VS0,VE0',
+32 silly registry.get     vary: 'Accept',
+32 silly registry.get     'keep-alive': 'timeout=10, max=50',
+32 silly registry.get     connection: 'Keep-Alive' } ]
+33 silly addNameRange number 2 { name: 'ejs', range: '*', hasData: true }
+34 silly addNameRange versions [ 'ejs',
+34 silly addNameRange   [ '0.0.1',
+34 silly addNameRange     '0.0.2',
+34 silly addNameRange     '0.0.3',
+34 silly addNameRange     '0.0.4',
+34 silly addNameRange     '0.1.0',
+34 silly addNameRange     '0.2.0',
+34 silly addNameRange     '0.2.1',
+34 silly addNameRange     '0.3.0',
+34 silly addNameRange     '0.3.1',
+34 silly addNameRange     '0.4.0',
+34 silly addNameRange     '0.4.1',
+34 silly addNameRange     '0.4.2',
+34 silly addNameRange     '0.4.3',
+34 silly addNameRange     '0.5.0',
+34 silly addNameRange     '0.6.0',
+34 silly addNameRange     '0.6.1',
+34 silly addNameRange     '0.7.0',
+34 silly addNameRange     '0.7.1',
+34 silly addNameRange     '0.7.2',
+34 silly addNameRange     '0.8.0',
+34 silly addNameRange     '0.8.1',
+34 silly addNameRange     '0.8.2',
+34 silly addNameRange     '0.8.3',
+34 silly addNameRange     '0.8.4',
+34 silly addNameRange     '0.8.5',
+34 silly addNameRange     '0.8.6',
+34 silly addNameRange     '0.8.8',
+34 silly addNameRange     '1.0.0',
+34 silly addNameRange     '2.0.2',
+34 silly addNameRange     '2.0.3',
+34 silly addNameRange     '2.0.4',
+34 silly addNameRange     '2.0.5',
+34 silly addNameRange     '2.0.6',
+34 silly addNameRange     '2.0.7',
+34 silly addNameRange     '2.0.8',
+34 silly addNameRange     '2.1.1',
+34 silly addNameRange     '2.1.2',
+34 silly addNameRange     '2.1.3',
+34 silly addNameRange     '2.1.4' ] ]
+35 verbose addNamed [ 'ejs', '2.1.4' ]
+36 verbose addNamed [ '2.1.4', '2.1.4' ]
+37 silly lockFile b419753c-ejs-2-1-4 ejs@2.1.4
+38 verbose lock ejs@2.1.4 /home/eric/.npm/b419753c-ejs-2-1-4.lock
+39 silly lockFile 96568ba0-stry-npmjs-org-ejs-ejs-2-1-4-tgz https://registry.npmjs.org/ejs/-/ejs-2.1.4.tgz
+40 verbose lock https://registry.npmjs.org/ejs/-/ejs-2.1.4.tgz /home/eric/.npm/96568ba0-stry-npmjs-org-ejs-ejs-2-1-4-tgz.lock
+41 verbose addRemoteTarball [ 'https://registry.npmjs.org/ejs/-/ejs-2.1.4.tgz',
+41 verbose addRemoteTarball   'bd005ff17b621a96ed296714b1a84fdae1b2932c' ]
+42 info retry fetch attempt 1 at 20:55:11
+43 verbose fetch to= /tmp/npm-19923-YyFnGOJ2/registry.npmjs.org/ejs/-/ejs-2.1.4.tgz
+44 http GET https://registry.npmjs.org/ejs/-/ejs-2.1.4.tgz
+45 http 200 https://registry.npmjs.org/ejs/-/ejs-2.1.4.tgz
+46 silly lockFile 96568ba0-stry-npmjs-org-ejs-ejs-2-1-4-tgz https://registry.npmjs.org/ejs/-/ejs-2.1.4.tgz
+47 silly lockFile 96568ba0-stry-npmjs-org-ejs-ejs-2-1-4-tgz https://registry.npmjs.org/ejs/-/ejs-2.1.4.tgz
+48 silly lockFile b419753c-ejs-2-1-4 ejs@2.1.4
+49 silly lockFile b419753c-ejs-2-1-4 ejs@2.1.4
+50 silly lockFile bcdf6e5f-ejs ejs@
+51 silly lockFile bcdf6e5f-ejs ejs@
+52 error Error: EACCES, mkdir '/home/eric/.npm/ejs/2.1.4'
+52 error  { [Error: EACCES, mkdir '/home/eric/.npm/ejs/2.1.4']
+52 error   errno: 3,
+52 error   code: 'EACCES',
+52 error   path: '/home/eric/.npm/ejs/2.1.4',
+52 error   parent: 'contatooh' }
+53 error Please try running this command again as root/Administrator.
+54 error System Linux 3.13.0-24-generic
+55 error command "/usr/bin/node" "/usr/bin/npm" "i" "ejs" "--save"
+56 error cwd /home/eric/github/books/mean/mean-stack/contatooh
+57 error node -v v0.10.33
+58 error npm -v 1.4.28
+59 error path /home/eric/.npm/ejs/2.1.4
+60 error code EACCES
+61 error errno 3
+62 error stack Error: EACCES, mkdir '/home/eric/.npm/ejs/2.1.4'
+63 verbose exit [ 3, true ]
