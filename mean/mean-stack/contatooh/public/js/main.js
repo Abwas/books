@@ -10,6 +10,9 @@ angular
       .when( '/contatos/:contatoId', {
         templateUrl : 'partials/contato.html',
         controller  : 'ContatoController'
+      })
+      .otherwise({
+        redirectTo : '/contatos'
       });
 
   });
