@@ -32,8 +32,6 @@ module.exports = function() {
       return contato._id === parseInt( idContato, 10 );
     })[ 0 ];
 
-    console.log( contato );
-
     contato ? 
       res.json( contato ) :
       res.status( 404 ).send( 'Contato não encontrado' );
