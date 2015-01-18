@@ -1,6 +1,11 @@
 var express = require( 'express' );
-// rotas
-var home = require( '../app/routes/home' );
+var load    = require( 'express-load' );
+
+// carregando todos os scripts dentro das pastas seguintes
+load( 'models', { cwd : 'app' })
+  .then( 'controllers' )
+  .then( 'routes' )
+  .into( app );
 
 module.exports = function() {
   var app = express();
