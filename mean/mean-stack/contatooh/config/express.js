@@ -1,12 +1,6 @@
 var express = require( 'express' );
 var load    = require( 'express-load' );
 
-// carregando todos os scripts dentro das pastas seguintes
-load( 'models', { cwd : 'app' })
-  .then( 'controllers' )
-  .then( 'routes' )
-  .into( app );
-
 module.exports = function() {
   var app = express();
   
@@ -20,7 +14,11 @@ module.exports = function() {
   app.set( 'views', './app/views' );
 
   // abaixo da config. do último middleware
-  home( app );
+  // carrega todos os scripts dentro das pastas seguintes
+  load( 'models', { cwd : 'app' })
+    .then( 'controllers' )
+    .then( 'routes' )
+    .into( app );
 
   return app;
 };
