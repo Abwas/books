@@ -1,6 +1,6 @@
 var express = require( 'express' );
 // rotas
-var home = require( './app/routes/home' );
+var home = require( '../app/routes/home' );
 
 module.exports = function() {
   var app = express();
