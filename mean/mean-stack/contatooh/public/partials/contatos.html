@@ -8,6 +8,10 @@
     Novo
   </button>
 
+  <input type="search"
+         placeholder="parte do nome"
+         ng-model="filtro">
+
   <p>
     Contatos cadastrados: {{ total }}
   </p>
@@ -19,15 +23,15 @@
         <th>E-MAIL</th>
         <th class="text-center">Ação</th>
       </tr>
-      <tr>
+      <tr ng-repeat="contato in contatos | filter: filtro">
         <td>
-          <a>Contato</a>
+          <a>{{ contato.nome }}</a>
         </td>
         <td>
-          cont@empresa.com.br
+          {{ contato.email }}
         </td>
         <td class="text-center">
-          <button class="btn brn-warning">
+          <button class="btn btn-warning">
             Remover
           </button>
         </td>
