@@ -5,11 +5,9 @@
   <meta charset="UTF-8">
   <title>Bem-vindo ao Contatooh</title>
 </head>
-<body ng-controller="ContatosController">
-  <h1>Bem-vindo ao Contatooh</h1>
-
-  <button ng-click="incrementa()">Novo</button>
-  <p>Contatos cadastrados: {{ total }}</p>
+<body>
+  
+  <div ng-view></div>
 
   <script src="vendor/angular/angular.js"></script>
   <script src="vendor/angular-route/angular-route.js"></script>
