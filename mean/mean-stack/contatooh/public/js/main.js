@@ -1,5 +1,5 @@
 angular
-  .module( 'contatooh', [ 'ngRoute' ] )
+  .module( 'contatooh', [ 'ngRoute', 'ngResource' ] )
   .config( function( $routeProvider ) {
 
     $routeProvider
