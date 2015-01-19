@@ -2,10 +2,6 @@ angular
   .module( 'contatooh' )
   .controller( 'ContatosController', function( $scope, $http ) {
 
-    $scope.total = 0;
-    $scope.incrementa = function() {
-      $scope.total++;
-    };
     $scope.contatos = [];
     $scope.filtro = '';
     $http.get( '/contatos' )

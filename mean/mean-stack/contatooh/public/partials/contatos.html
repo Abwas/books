@@ -3,8 +3,7 @@
     Bem-vindo ao Contatooh
   </h1>
 
-  <button ng-click="incrementa()"
-          class="btn btn-primary">
+  <button class="btn btn-primary">
     Novo
   </button>
 
@@ -13,7 +12,7 @@
          ng-model="filtro">
 
   <p>
-    Contatos cadastrados: {{ total }}
+    Contatos cadastrados: {{ contatos.length }}
   </p>
 
   <div class="table-responsive">
