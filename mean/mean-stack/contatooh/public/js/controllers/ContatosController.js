@@ -6,11 +6,17 @@ angular
     $scope.filtro = '';
     var Contato = $resource( '/contatos' );
 
-    Contato.query( function( contatos ) {
-      $scope.contatos = contatos;
-    }, function( erro ) {
-      console.log( 'Não foi possível obter a lista de contatos' );
-      console.log( erro );
-    });
+    function buscaContato() {
+
+      Contato.query( function( contatos ) {
+        $scope.contatos = contatos;
+      }, function( erro ) {
+        console.log( 'Não foi possível obter a lista de contatos' );
+        console.log( erro );
+      });
+
+    }
+
+    buscaContato();
 
   });
