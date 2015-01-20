@@ -50,6 +50,10 @@ module.exports = function() {
 
   };
 
+  controller.salvaContato = function( req, res ) {
+    
+  };
+
   return controller;
 
 };

@@ -5,8 +5,9 @@ angular
     $scope.contatos = [];
     $scope.filtro = '';
     var Contato = $resource( '/contatos' );
+    var Cont    = $resource( '/contatos/:id' );
 
-    function buscaContato() {
+    function buscaContatos() {
 
       Contato.query( function( contatos ) {
         $scope.contatos = contatos;
@@ -17,6 +18,19 @@ angular
 
     }
 
-    buscaContato();
+    buscaContatos();
+
+    $scope.remove = function( contato ) {
+      
+      var promise = Cont.delete({ id : contato._id }).$promise;
+
+      promise
+        .then( buscaContatos )
+        .catch( function( erro ) {
+          console.log( 'Não foi possível remover o contato' );
+          console.log( erro );
+        });
+
+    };
 
   });

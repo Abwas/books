@@ -4,7 +4,7 @@ module.exports = function( app ) {
 
   app
     .route( '/contatos' )
-    .get( controller.listaTodos )
+    .get( controller.listaContatos )
     .post( controller.salvaContato );
 
   app
