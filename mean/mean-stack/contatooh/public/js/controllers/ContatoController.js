@@ -19,8 +19,26 @@ angular
 
     } else {
 
-      $scope.contato = {};
+      $scope.contato = new Contato();
 
     }
+
+    $scope.salva = function() {
+
+      $scope.contato.$save()
+        .then( function() {
+
+          $scope.mensagem = { texto : 'Salvo com sucesso' };
+          // limpa form
+          $scope.contato = new Contato();
+
+        })
+        .catch( function( erro ) {
+
+          $scope.mensagem = { texto : 'Não foi possível salvar' };
+
+        });
+
+    };
 
   });
