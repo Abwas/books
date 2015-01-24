@@ -5,9 +5,10 @@
   <h1 class="text-center">
     Bem-vindo ao Contatooh
   </h1>
-  <button class="btn btn-primary">
-    Novo
-  </button>
+  <a href="#/contato"
+     class="btn btn-primary">
+    Novo Contato
+  </a>  
   <input type="search"
          placeholder="parte do nome"
          ng-model="filtro">
@@ -26,7 +27,7 @@
       </tr>
       <tr ng-repeat="contato in contatos | filter: filtro">
         <td>
-          <a>{{ contato.nome }}</a>
+          <a ng-href="#/contato/{{ contato._id }}">{{ contato.nome }}</a>
         </td>
         <td>
           {{ contato.email }}
