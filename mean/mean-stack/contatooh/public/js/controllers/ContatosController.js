@@ -1,13 +1,13 @@
 angular
   .module( 'contatooh' )
-  .controller( 'ContatosController', function( $scope, $resource ) {
+  .controller( 'ContatosController', function( $scope, Contato ) {
 
     $scope.contatos = [];
     $scope.filtro   = '';
     $scope.mensagem = { texto : '' };
 
-    var Contato     = $resource( '/contatos' );
-    var Cont        = $resource( '/contatos/:id' );
+    // var Contato     = $resource( '/contatos' );
+    // var Cont        = $resource( '/contatos/:id' );
 
     function buscaContatos() {
 
@@ -27,7 +27,7 @@ angular
 
     $scope.remove = function( contato ) {
       
-      Cont.delete({ id : contato._id },
+      Contato.delete({ id : contato._id },
         buscaContatos,
         function( erro ) {
           console.log( erro );
