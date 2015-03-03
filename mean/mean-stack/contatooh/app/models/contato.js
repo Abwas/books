@@ -8,4 +8,6 @@ module.exports = function() {
     index : { unique : true }
   });
 
+  return mongoose.model( 'Contato', schema );
+
 };
