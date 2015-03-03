@@ -1,5 +1,7 @@
 var mongoose = require( 'mongoose' );
 
+mongoose.set( 'debug', true );
+
 module.exports = function( uri ) {
   mongoose
     .connect( uri );
