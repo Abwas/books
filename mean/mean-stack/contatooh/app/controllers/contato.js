@@ -23,15 +23,22 @@ module.exports = function( app ) {
 
   controller.obtemContato = function( req, res ) {
 
-    var idContato = req.params.id;
-    
-    var contato   = contatos.filter( function( contato ) {
-      return contato._id === parseInt( idContato, 10 );
-    })[ 0 ];
+    var _id = req.params.id;
 
-    contato ? 
-      res.json( contato ) :
-      res.status( 404 ).send( 'Contato não encontrado' );
+    Contato
+      .findById( _id )
+      .exec()
+      .then( function( contato ) {
+        if ( !contato  ) throw new Error( 'Contato não encontrado' );
+        res
+          .json( contato );
+      }, function( erro ) {
+        console
+          .log( erro );
+        res
+          .status( 404 )
+          .json( erro );
+      });
 
   };
 
