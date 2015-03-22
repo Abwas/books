@@ -188,3 +188,19 @@ console.log( one );
 console.log( two );
 console.log( three );
 ```
+
+## Erros de acesso à propriedade
+
+Consultar uma propriedade que não existe em um objeto existente não retorna um erro, apenas será retornado `undefined`. Porém, consultar um propriedade de um objeto inexistente retornará um erro `ReferenceError`.
+
+Se uma propriedade estiver configurada apenas como leitura, esta não pode ter seu valor alterado, mesmo que seja uma propriedade herdada.
+
+Caso um objeto não seja extensível, e um de seus protótipos não tenha determinada propriedade, este objeto também não poderá ter uma nova propriedade configurada.
+
+Fora do `strict mode`, erros silenciosos ocorrerão caso alguma tentativa de configurar uma propriedade não configurável aconteça.
+
+```js
+var obj = {};
+
+obj.someValue // undefined
+```
