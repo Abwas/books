@@ -108,3 +108,53 @@ obj[ 'value' ] = 93;
 obj[ 'value' ] // 93
 ```
 
+## Objetos como arrays associativos
+
+Objetos em JavaScript são arrays associativos (ou hash, mapa ou dicionário).
+
+Usamos a notação por ponto quando conhecemos qual propriedade iremos acessar, e a notação por colchetes quando descobrimos o nome da propriedade em tempo de execução do programa.
+
+Abaixo iremos criar um programa que deve:
+
+1. Adicionar propriedades em um objeto.
+1. Passar via parâmetro na função que irá criar as propriedades, o nome do objeto, nome da propriedade e valor dessa propriedade.
+1. Imprimir um objeto previamente criado. Caso não seja um objeto, informar.
+
+```js
+function addProperty( object, property, value ) {
+  
+  if ( typeof object === 'object' ) {
+    
+    object[ property ] = value;
+    
+  }  
+  
+  return;
+  
+}
+
+function printObject( object ) {
+  
+  if ( typeof object === 'object' && !( object.constructor === Array )) {
+    
+    console.log( JSON.stringify( object, null, 2 ));
+    
+  } else {
+    
+    console.log( 'This is not an object!' );
+    
+  }
+  
+}
+
+// defining properties
+var obj = {};
+var arr = [];
+
+// Testing the method
+addProperty( obj, 'some', 13 );
+printObject( obj );
+
+addProperty( arr, 'other', 31 );
+printObject( arr );
+```
