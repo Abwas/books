@@ -79,3 +79,32 @@ var guitar0 = Object.create( Object.prototype );
 console.log( guitar0.toString()); // [object Object]
 console.log( guitar0 ); // Object {}
 ```
+
+## Consultando e configurando propriedades
+
+Podemos consultar propriedades das seguintes formas:
+
+```js
+var obj = {
+  'some'  : 13,
+  'value' : 31
+};
+
+// Notação por ponto
+obj.some; // 13
+
+// Notação por colchete
+obj[ 'value' ] // 31
+
+```
+
+Para atribuir novos valores as propriedades, usamos a mesma notação mostrada anteriormente, mas com uma operação de atribuição em seguida.
+
+```js
+obj.some = 39;
+obj.some; // 39
+
+obj[ 'value' ] = 93;
+obj[ 'value' ] // 93
+```
+
