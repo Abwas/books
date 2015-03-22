@@ -204,3 +204,58 @@ var obj = {};
 
 obj.someValue // undefined
 ```
+
+## Excluindo Propriedades
+
+O operador `delete` deleta uma propriedade de um objeto.
+
+É excluída apenas as propriedades **próprias**, as herdadas devem ser excluídas diretamente nos respectivos protótipos.
+
+```js
+var guitar = {
+  'model' : 'MusicMan',
+  'price' : 3100,
+  'owner' : 'John Petrucci'
+};
+
+var ibanez = Object.create( guitar );
+
+ibanez
+  .model = 'JP100';
+ibanez
+  .price = 2600;
+
+console.log( guitar ); // Object {model: "MusicMan", price: 3100, owner: "John Petrucci"}
+console.log( ibanez ); // Object {model: "JP100", price: 2600, owner: "John Petrucci"}
+
+delete ibanez.owner;
+
+console.log( guitar ); // Object {model: "MusicMan", price: 3100, owner: "John Petrucci"}
+console.log( ibanez ); // Object {model: "JP100", price: 2600, owner: "John Petrucci"}
+
+delete guitar.owner;
+
+console.log( guitar ); // Object {model: "MusicMan", price: 3100}
+console.log( ibanez ); // Object {model: "JP100", price: 2600}
+```
+
+Retorna `true` caso a propriedade tenha sido deletada.
+
+Não exclui propriedades com atributo configurável `false`.
+
+No modo restrito, só deleta uma propriedade global se está estiver precedida de `this`.
+
+**Ex**:
+
+```js
+(function() {
+  
+  'use strict';
+  
+  someValue = 13;
+  
+  delete someValue; // SyntaxError: Delete of an unqualified identifier in strict mode.
+  delete this.someValue; // Ok
+  
+}());
+```
