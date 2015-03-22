@@ -158,3 +158,33 @@ printObject( obj );
 addProperty( arr, 'other', 31 );
 printObject( arr );
 ```
+
+## Herança
+
+No JavaScript, temos algo chamado **herança prototípica**. Objetos, e elementos em geral, geralmente herdam propriedades e métodos de seus construtores, ou protótipos.
+
+Quando buscamos uma propriedade em um determinado objeto, caso ele não a tenha, seu protótipo será consultado para verificar a existência de tal propriedade, e caso também não tenha a tal propriedade, o protótipo do protótipo será consultado, até chegar em um elemento com protótipo igual a `null`.
+
+**Ex**:
+
+```js
+var one   = { 'a' : 13 };
+var two   = Object.create( one );
+var three = Object.create( two );
+
+two
+  .a += 13; // 26
+two
+  .b = 39; // 39
+
+three
+  .a += 13; // 39
+three
+  .b += 13; // 52
+three
+  .c = 65;
+
+console.log( one );
+console.log( two );
+console.log( three );
+```
