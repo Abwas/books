@@ -316,3 +316,21 @@ musicman
 console.log( musicman.propertyIsEnumerable( 'model' )); // false
 console.log( musicman.propertyIsEnumerable( 'strings' ));  // true
 ```
+
+Podemos verificar a existência de uma propriedade consultando-a e verificando se o seu valor é igual a `undefined`.
+
+```js
+var obj = { some : 'value' };
+
+console.log( obj.some !== undefined ); // true
+console.log( obj.value !== undefined ); // false
+```
+
+O operador `in` consegue identificar se uma propriedade existe porém está com valor `undefined`.
+
+```js
+var obj = { some : undefined };
+
+console.log( obj.some !== undefined ); // false
+console.log( 'some' in obj ); // true
+```
