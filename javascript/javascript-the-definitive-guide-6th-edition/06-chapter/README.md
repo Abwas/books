@@ -416,3 +416,27 @@ musicman.priceUS = 5500;
 console.log( musicman.priceUS ); // 5500
 console.log( musicman.priceBR ); // 31977
 ```
+
+Números identificadores sequenciais criados utilizando as propriedades de acesso:
+
+```js
+var idGenerator = {
+  
+  // Private properties
+  _serial : 0,
+
+  // Access properties
+  get newId() {
+    return this._serial++;
+  }
+  
+};
+
+var id0 = idGenerator.newId;
+var id1 = idGenerator.newId;
+var id2 = idGenerator.newId;
+
+console.log( id0 ); // 0
+console.log( id1 ); // 1
+console.log( id2 ); // 2
+```
