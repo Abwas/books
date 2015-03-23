@@ -260,3 +260,47 @@ No modo restrito, só deleta uma propriedade global se está estiver precedida d
 }());
 ```
 
+## Testando Propriedades
+
+Podemos testar se um objeto tem uma determinada propriedade de diferentes formas no JavaScript, usando:
+
+* `in`,
+* `hasOwnProperty()` e
+* `propertyIsEnumerable()`
+
+O operador `in` recebe uma string a sua direita e o objeto a sua esquerda. Caso o objeto contenha a propriedade, será retornado o valor `true`.
+
+```js
+var guitar = { strings : 6 };
+
+console.log( 'strings' in guitar ); // true
+console.log( 'price' in guitar ); // false
+```
+
+`hasOwnProperty()` testa se o objeto tem uma propriedade, retornando `true` caso tenha, porém se a propriedade for herdada `false` será retornado.
+
+```js
+var guitar = { 'strings' : 7 };
+
+console.log( guitar.toString());
+
+console.log( guitar.hasOwnProperty( 'strings' )); // true
+console.log( guitar.hasOwnProperty( 'toString' )); // false
+
+// Overwriting the toString() method
+guitar.toString = toString;
+
+console.log( guitar.hasOwnProperty( 'toString' )); // true
+
+console.log( guitar.toString()); // "overwritten method"
+
+// Methods declaration
+function toString() {
+  return "overwritten method";
+}
+```
+
+
+```js
+
+```
