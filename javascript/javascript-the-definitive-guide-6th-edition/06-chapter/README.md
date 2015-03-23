@@ -352,3 +352,67 @@ Para conseguir todas as propriedades do objeto, inclusive as não enumeráveis, 
 * `union()`
 * `intersection()`
 * `keys()`
+
+## Métodos Getter e Setter de Propriedades
+
+As propriedades gerenciadas pelos métodos *getter* e *setter* são chamadas **propriedades de acesso**, para serem diferenciadas das **propriedades de dados**.
+
+Ao consultar uma propriedade de acesso, o método getter é chamado sem argumentos.
+
+Ao configurar uma propriedade de acesso, o método setter é chamado, e seu valor de retorno é ignorado.
+
+Propriedade de acesso não é *gravável*. Se tem um método getter e setter, é de leitura e gravação. Se tem apenas um método getter, é apenas de leitura, e se tem apenas um setter, é apenas de gravação, retornando `undefined` se consultada.
+
+```js
+var guitar = {
+  
+  // data properties
+  brand    : 'Ibanez',
+  tax      : 1.8,
+  dollar   : 3.23,
+  cost     : 3100,
+  
+  
+  // access properties
+  get priceUS() {
+    return this.cost;
+  },
+  set priceUS( newPrice ) {
+    this.cost = newPrice;
+  },
+  
+  get priceBR() {
+    return this.priceUS * this.tax * this.dollar;
+  }
+  
+};
+
+console.log( guitar.priceUS ); // 3100
+console.log( guitar.priceBR ); // 18023.4
+
+guitar.priceUS = 3500;
+
+console.log( guitar.priceUS ); // 3500
+console.log( guitar.priceBR ); // 20349
+```
+
+Usamos `this` para nos referenciar as outras propriedades do mesmo objeto nos métodos getter e setter.
+
+As propriedades de acesso também são herdadas.
+
+```js
+// inheritance of access properties
+// using the guitar object above
+var musicman = Object.create( guitar );
+
+musicman.cost = 4000;
+
+console.log( 'MusicMan' );
+console.log( musicman.priceUS ); // 4000
+console.log( musicman.priceBR ); // 23256
+
+musicman.priceUS = 5500;
+
+console.log( musicman.priceUS ); // 5500
+console.log( musicman.priceBR ); // 31977
+```
