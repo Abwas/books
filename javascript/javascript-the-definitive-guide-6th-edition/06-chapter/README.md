@@ -259,3 +259,4 @@ No modo restrito, só deleta uma propriedade global se está estiver precedida d
   
 }());
 ```
+
