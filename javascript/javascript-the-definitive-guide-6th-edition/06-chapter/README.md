@@ -300,7 +300,19 @@ function toString() {
 }
 ```
 
+`propertyIsEnumerable()` retorna `true` apenas se a propriedade for própria do objeto e enumerável.
 
 ```js
+var guitar = {
+  'model' : '',
+  'price' : 0
+};
 
+var musicman = Object.create( guitar );
+
+musicman
+  .strings = 7;
+
+console.log( musicman.propertyIsEnumerable( 'model' )); // false
+console.log( musicman.propertyIsEnumerable( 'strings' ));  // true
 ```
