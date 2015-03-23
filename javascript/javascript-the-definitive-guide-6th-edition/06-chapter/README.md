@@ -334,3 +334,21 @@ var obj = { some : undefined };
 console.log( obj.some !== undefined ); // false
 console.log( 'some' in obj ); // true
 ```
+
+## Enumerando propriedades
+
+Usando `for in` e os métodos da seção anterior, podemos criar novos métodos para manipularmos as propriedades nos objetos em JavaScript.
+
+Para ter o nome das propriedades enumeráveis de um objeto em um array, você pode utilizar o método `Object.keys( nomeDoObjeto )`.
+
+Para conseguir todas as propriedades do objeto, inclusive as não enumeráveis, use o método `Object.getOwnPropertyNames( nomeDoObjeto )`.
+
+**Lembrete**: ver funções utilitárias de manipulação de propriedades
+
+* `extend()`
+* `merge()`
+* `restrict()`
+* `substract()`
+* `union()`
+* `intersection()`
+* `keys()`
