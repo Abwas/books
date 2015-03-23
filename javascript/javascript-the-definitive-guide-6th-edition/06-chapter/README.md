@@ -440,3 +440,52 @@ console.log( id0 ); // 0
 console.log( id1 ); // 1
 console.log( id2 ); // 2
 ```
+
+Dados para RPG!
+
+```js
+var rpgDice = {
+  get d20() {
+    return randomNumberGenerator( 1, 20 );
+  },
+  
+  get d10() {
+    return randomNumberGenerator( 1, 10 );
+  },
+  
+  get d8() {
+    return randomNumberGenerator( 1, 8 );
+  },
+  
+  get d6() {
+    return randomNumberGenerator( 1, 6 );
+  },
+  
+  get d4() {
+    return randomNumberGenerator( 1, 4 );
+  }
+};
+
+// Methods declarations
+
+/*
+ *
+ * @param {Number} min - inclusive
+ * @param {Number} max - exclusive
+ *
+ * ps: max + 1 = max enclosed
+ *
+*/
+function randomNumberGenerator( min, max ) {  
+  
+  return Math.floor( Math.random() * (( max + 1 ) - min ) + min );
+  
+}
+
+console.log( rpgDice.d20 );
+console.log( rpgDice.d10 );
+console.log( rpgDice.d8 );
+console.log( rpgDice.d6 );
+console.log( rpgDice.d4 );
+
+```
