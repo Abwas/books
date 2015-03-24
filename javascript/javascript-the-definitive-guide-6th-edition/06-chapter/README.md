@@ -489,3 +489,20 @@ console.log( rpgDice.d6 );
 console.log( rpgDice.d4 );
 
 ```
+
+## Atributos de propriedade
+
+As propriedades na ECMAScript 5 podem ser graváveis, enumeráveis ou consultáveis, em ECMAScript 3 elas têm todas estas propriedades.
+
+Caso você queira criar uma biblioteca ou framework, isso se torna importante pois lhe permite:
+
+* adicionar métodos não enumeráveis em objetos (como os métodos nativos)
+* impedir que propriedades possam ser excluídas ou alteradas
+
+Uma propriedade pode ter 4 atributos:
+
+1. get
+1. set
+1. enumerável
+1. configurável
+
