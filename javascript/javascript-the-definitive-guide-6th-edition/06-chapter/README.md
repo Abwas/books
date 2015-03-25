@@ -499,10 +499,26 @@ Caso você queira criar uma biblioteca ou framework, isso se torna importante po
 * adicionar métodos não enumeráveis em objetos (como os métodos nativos)
 * impedir que propriedades possam ser excluídas ou alteradas
 
-Uma propriedade pode ter 4 atributos:
+Uma propriedade pode ter 5 atributos:
 
-1. get
-1. set
-1. enumerável
-1. configurável
+1. `get`
+1. `set`
+1. `enumerable` (enumerável)
+1. `configurable` (configurável)
+1. `writable` (gravável)
 
+Use `Object.getOwnPropertyDescriptor( obj, property )` para conhecer o descritor de uma variável.
+
+```js
+var obj = { some : 'value' };
+
+console.log( Object.getOwnPropertyDescriptor( obj, 'some' ));
+//  Object {value: "value", writable: true, enumerable: true, configurable: true}
+```
+
+
+
+
+```js
+
+```
