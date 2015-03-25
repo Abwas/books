@@ -516,9 +516,28 @@ console.log( Object.getOwnPropertyDescriptor( obj, 'some' ));
 //  Object {value: "value", writable: true, enumerable: true, configurable: true}
 ```
 
+```js
+var guitar = {
+  
+  // Data properties
+  price  : 3100,
+  tax    : 1.6,
+  dollar : 3.13,
+  
+  // Access properties
+  get brPrice() {
+    return this.price * this.tax * this.dollar;
+  }
+  
+};
 
-
+console.log( Object.getOwnPropertyDescriptor( guitar, 'brPrice' ));
+// Object {get: function, set: undefined, enumerable: true, configurable: true}
+```
 
 ```js
+var guitar = { model : 'MusicMan' };
 
+console.log( Object.getOwnPropertyDescriptor( guitar, 'price' )); // undefined
+console.log( Object.getOwnPropertyDescriptor( guitar, 'toString' )); // undefined
 ```
