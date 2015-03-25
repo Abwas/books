@@ -541,3 +541,5 @@ var guitar = { model : 'MusicMan' };
 console.log( Object.getOwnPropertyDescriptor( guitar, 'price' )); // undefined
 console.log( Object.getOwnPropertyDescriptor( guitar, 'toString' )); // undefined
 ```
+
+**ps**: para consultar propriedades herdadas, devemos usar o método `Object.getPrototypeOf()`, e verificar se o protótipo tem o método buscado. Caso não tenha, usamos novamente esse método para encontrar o prótipo do protótipo.
