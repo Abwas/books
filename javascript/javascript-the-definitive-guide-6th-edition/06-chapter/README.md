@@ -659,3 +659,34 @@ Object.defineProperties( object, {
 })
 ```
 
+Com um exemplo real:
+
+```js
+var guitar = Object.defineProperties( {}, {
+  price : {
+    value        : 3100,
+    writable     : true,
+    enumerable   : true,
+    configurable : true
+  },
+  taxes : {
+    value        : 2,
+    writable     : true,
+    enumerable   : true,
+    configurable : true
+  },
+  totalPrice : {
+    get          : function() { return this.price * this.taxes; },
+    enumerable   : true,
+    configurable : false
+  }
+  
+});
+
+console.log( JSON.stringify( guitar, null, 2 ));
+// {
+//   "price": 3100,
+//   "taxes": 2,
+//   "totalPrice": 6200
+// }
+```
