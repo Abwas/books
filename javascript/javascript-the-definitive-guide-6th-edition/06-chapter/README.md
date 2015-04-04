@@ -615,6 +615,18 @@ O objeto descritor pode ter as seguintes propriedades/métodos:
   
   console
     .log( guitar.totalPrice ); // 6200
+  
+  // task 4
+  Object
+    .defineProperty( guitar, 'totalPrice', {
+      configurable : false
+    });
+  
+  Object
+    .defineProperty( guitar, 'totalPrice', {
+      configurable : true
+    });
+  // TypeError: Cannot redefine property: totalPrice
 
 })();
 ```
