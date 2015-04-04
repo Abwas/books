@@ -636,3 +636,26 @@ Ao criar uma propriedade, os atributos não definidos serão configurados como `
 Ao configurar uma propriedade já existente, os atributos não mencionados ficarão intactos.
 
 `Object.defineProperty()` altera ou cria uma propriedade própria, **nunca** uma herdada.
+
+Os métodos `Object.defineProperty()` e `Object.defineProperties()` retornam o próprio objeto, sendo assim, você pode criar um novo objeto passando um objeto vazio como primeiro parâmetro para estes métodos.
+
+```js
+var guitar = Object.defineProperty( {}, 'brand', {
+  value        : 'MusicMan',
+  writable     : true,
+  enumerable   : true,
+  configurable : true
+});
+
+console.log( guitar.brand ); // MusicMan
+```
+
+**Criando várias propriedades simultaneamente**
+
+```js
+Object.defineProperties( object, {
+  a : objectPropertyDescriptorA, 
+  b : objectPropertyDescriptorB
+})
+```
+
