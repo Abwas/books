@@ -637,7 +637,7 @@ Ao configurar uma propriedade já existente, os atributos não mencionados ficar
 
 `Object.defineProperty()` altera ou cria uma propriedade própria, **nunca** uma herdada.
 
-Os métodos `Object.defineProperty()` e `Object.defineProperties()` retornam o próprio objeto, sendo assim, você pode criar um novo objeto passando um objeto vazio como primeiro parâmetro para estes métodos.
+Os métodos `Object.defineProperty()` e `Object.defineProperties()` retornam o próprio objeto já modificado, sendo assim, você pode criar um novo objeto passando um objeto vazio como primeiro parâmetro para estes métodos.
 
 ```js
 var guitar = Object.defineProperty( {}, 'brand', {
