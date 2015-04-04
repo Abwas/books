@@ -567,4 +567,9 @@ O objeto descritor pode ter as seguintes propriedades/métodos:
 
 **ps**: Uma propriedade pode ter o atributo `get` **OU** `set`.
 
-**Exercício**: Crie uma propriedade de dados 
+**Exercício**: 
+
+1. Crie uma propriedade de dados chamada `totalPrice` no objeto `guitar`, que seja gravável, configurável e não enumerável
+1. Torne-a não gravável e tente gravar algum valor posteriormente (no modo restrito)
+1. Torne-a uma propriedade de acesso de leitura, lendo a propriedade `price`
+1. Torne-a uma propriedade não configurável e tente reconfigurá-la posteriormente
