@@ -571,7 +571,7 @@ O objeto descritor pode ter as seguintes propriedades/métodos:
 
 1. Crie uma propriedade de dados chamada `totalPrice` no objeto `guitar`, que seja gravável, configurável e não enumerável
 1. Torne-a não gravável e tente gravar algum valor posteriormente (no modo restrito)
-1. Torne-a uma propriedade de acesso de leitura, lendo a propriedade `price`
+1. Torne-a uma propriedade de acesso de leitura, lendo a propriedade `price * taxes`
 1. Torne-a uma propriedade não configurável e tente reconfigurá-la posteriormente
 
 ```js
@@ -585,21 +585,36 @@ O objeto descritor pode ter as seguintes propriedades/métodos:
   };
 
   // task 1
-  Object.defineProperty( guitar, 'totalPrice', {
-    value        : 6200,
-    writable     : true,
-    enumerable   : true,
-    configurable : true
-  });
+  Object
+    .defineProperty( guitar, 'totalPrice', {
+      value        : 6200,
+      writable     : true,
+      enumerable   : true,
+      configurable : true
+    });
 
-  console.log( guitar.totalPrice ); // 6200
+  console
+    .log( guitar.totalPrice ); // 6200
   
   // task 2
-  Object.defineProperty( guitar, 'totalPrice', {
-    writable : false
-  });
+  Object
+    .defineProperty( guitar, 'totalPrice', {
+      writable : false
+    });
   
-  guitar.totalPrice = 9300; // TypeError: Cannot assign to read only property 'totalPrice' of #<Object>
+  /* 
+  guitar
+    .totalPrice = 9300; // TypeError: Cannot assign to read only property 'totalPrice' of #<Object>
+  */
+  
+  // task 3
+  Object
+    .defineProperty( guitar, 'totalPrice', {
+      get : function() { return this.price * this.taxes; }
+    });
+  
+  console
+    .log( guitar.totalPrice ); // 6200
 
 })();
 ```
