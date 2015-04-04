@@ -630,3 +630,9 @@ O objeto descritor pode ter as seguintes propriedades/métodos:
 
 })();
 ```
+
+Ao criar uma propriedade, os atributos não definidos serão configurados como `false` ou `undefined`.
+
+Ao configurar uma propriedade já existente, os atributos não mencionados ficarão intactos.
+
+`Object.defineProperty()` altera ou cria uma propriedade própria, **nunca** uma herdada.
