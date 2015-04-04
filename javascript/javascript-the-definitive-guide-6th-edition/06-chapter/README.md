@@ -593,6 +593,13 @@ O objeto descritor pode ter as seguintes propriedades/métodos:
   });
 
   console.log( guitar.totalPrice ); // 6200
+  
+  // task 2
+  Object.defineProperty( guitar, 'totalPrice', {
+    writable : false
+  });
+  
+  guitar.totalPrice = 9300; // TypeError: Cannot assign to read only property 'totalPrice' of #<Object>
 
 })();
 ```
