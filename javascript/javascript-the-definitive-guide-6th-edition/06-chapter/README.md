@@ -560,7 +560,11 @@ O objeto descritor pode ter as seguintes propriedades/métodos:
   writable     : true,
   enumerable   : true,
   configurable : true,
-  get          : function() { return someValue; },
+  get          : function() { return someValue; }, // get ou set
   set          : function( newValue ) { someValue = newValue; }
 }
 ```
+
+**ps**: Uma propriedade pode ter o atributo `get` **OU** `set`.
+
+**Exercício**: Crie uma propriedade de dados 
