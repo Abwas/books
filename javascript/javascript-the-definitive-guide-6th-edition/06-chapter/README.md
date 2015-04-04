@@ -573,3 +573,26 @@ O objeto descritor pode ter as seguintes propriedades/métodos:
 1. Torne-a não gravável e tente gravar algum valor posteriormente (no modo restrito)
 1. Torne-a uma propriedade de acesso de leitura, lendo a propriedade `price`
 1. Torne-a uma propriedade não configurável e tente reconfigurá-la posteriormente
+
+```js
+(function() {
+  
+  'use strict';
+
+  var guitar = {
+    price : 3100,
+    taxes : 2
+  };
+
+  // task 1
+  Object.defineProperty( guitar, 'totalPrice', {
+    value        : 6200,
+    writable     : true,
+    enumerable   : true,
+    configurable : true
+  });
+
+  console.log( guitar.totalPrice ); // 6200
+
+})();
+```
