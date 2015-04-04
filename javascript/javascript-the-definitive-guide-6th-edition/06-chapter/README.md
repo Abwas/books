@@ -542,4 +542,25 @@ console.log( Object.getOwnPropertyDescriptor( guitar, 'price' )); // undefined
 console.log( Object.getOwnPropertyDescriptor( guitar, 'toString' )); // undefined
 ```
 
-**ps**: para consultar propriedades herdadas, devemos usar o método `Object.getPrototypeOf()`, e verificar se o protótipo tem o método buscado. Caso não tenha, usamos novamente esse método para encontrar o prótipo do protótipo.
+**ps**: para consultar propriedades herdadas, devemos usar o método `Object.getPrototypeOf()`, e verificar se o protótipo tem o método buscado. Caso não tenha, usamos novamente esse método para encontrar o prótotipo do protótipo.
+
+**Criando e configurando propriedades**
+
+Use o método `Object.defineProperty()` para criar e configurar uma propriedade. Este método recebe 3 parâmetros:
+
+- Referência do objeto que contém/irá conter a propriedade
+- Nome da propriedade
+- Objeto descritor da propriedade
+
+O objeto descritor pode ter as seguintes propriedades/métodos:
+
+```js
+{
+  value        : 31,
+  writable     : true,
+  enumerable   : true,
+  configurable : true,
+  get          : function() { return someValue; },
+  set          : function( newValue ) { someValue = newValue; }
+}
+```
