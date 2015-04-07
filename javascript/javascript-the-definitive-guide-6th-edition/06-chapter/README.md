@@ -726,3 +726,20 @@ obj = new Builder();
 console.log( obj.value ); // some
 console.log( obj.constructor.prototype ); // Builder {}
 ```
+
+**OBS**: `constructor.prototype` não é tão confiável quando usado com objetos criados com `Object.create()`
+
+Podemos usar também o método `Object.isPrototypeOf()`
+
+```js
+var Builder = { some : 'value' };
+
+var build = Object.create( Builder );
+
+console.log( Object.isPrototypeOf( build )); // false
+console.log( Builder.isPrototypeOf( build )); // true
+console.log( Object.prototype.isPrototypeOf( build )); // true
+
+console.log( build.constructor.prototype ); // Object {}
+console.log( Object.getPrototypeOf( build )); // Object {some: "value"}
+```
