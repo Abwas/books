@@ -637,7 +637,7 @@ Ao configurar uma propriedade já existente, os atributos não mencionados ficar
 
 `Object.defineProperty()` altera ou cria uma propriedade própria, **nunca** uma herdada.
 
-Os métodos `Object.defineProperty()` e `Object.defineProperties()` retornam o próprio objeto já modificado, sendo assim, você pode criar um novo objeto passando um objeto vazio como primeiro parâmetro para estes métodos.
+Os métodos `Object.defineProperty()` e `Object.defineProperties()` retornam o próprio objeto **já modificado**, sendo assim, você pode criar um novo objeto passando um objeto vazio como primeiro parâmetro para estes métodos.
 
 ```js
 var guitar = Object.defineProperty( {}, 'brand', {
@@ -689,4 +689,40 @@ console.log( JSON.stringify( guitar, null, 2 ));
 //   "taxes": 2,
 //   "totalPrice": 6200
 // }
+```
+
+## Atributos de Objeto
+
+### Atributo `prototype`
+
+Este atributo é configurado na criação de um objeto.
+
+É diferente da propriedade `prototype` de um objeto.
+
+Objetos literais usam `Object.prototype` como protótipo, os criados com `new` utilizam o `prototype` da função construtora e objetos criados com `Object.create()` usam o primeiro argumento, que também pode ser `null`.
+
+Para saber o protótipo de um objeto pode-se usar:
+
+* `Object.getPrototypeOf()` - ECMAScript 5
+* `obj.constructor.prototype`
+
+**Exemplo**:
+
+```js
+var obj = { some : 'value' };
+
+console.log( Object.getPrototypeOf( obj )); // Object {}
+
+/////////////
+
+function Builder() {
+  
+  this.value = 'some';
+  
+}
+
+obj = new Builder();
+
+console.log( obj.value ); // some
+console.log( obj.constructor.prototype ); // Builder {}
 ```
