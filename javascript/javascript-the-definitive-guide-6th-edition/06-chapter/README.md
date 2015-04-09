@@ -764,4 +764,6 @@ Em ES5 você pode criar um objeto e convertê-lo para não ser extensível.
 
 Não tem como tornar um objeto novamente extensível, e caso o protótipo deste objeto receba mais propriedades/métodos, este vai herdar estas propriedades.
 
+`Object.seal()` sela o objeto para que não possa ser adicionadas propriedades (como em `.preventExtensions`), e deixa todas as existentes não configuráveis, porém ainda podem ter seus valores alterados. `Object.isSealed()` é usado para verificar se um objeto está selado.
 
+`Object.freeze()` sela o objeto para que não possa ser adicionadas propriedades (como em `.preventExtensions`) e deixa todas as propriedades apenas para leitura. `Object.isFrozen()` é usado para verificar se um objeto está congelado.
