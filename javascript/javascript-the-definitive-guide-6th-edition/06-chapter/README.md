@@ -755,3 +755,13 @@ Vários objetos herdam outros métodos `toString()`, então apenas chamando `toS
 * Objetos criados por construtoras internas retornam o nome desta na classe.
 * Nas construtoras criadas, a classe é `Object`.
 
+### Atributo `extensible`
+
+Em ES5 você pode criar um objeto e convertê-lo para não ser extensível.
+
+* Para checar se um objeto é extensível: `Object.isExtensible()`
+* Tornar um objeto não extensível: `Object.preventExtensions()`
+
+Não tem como tornar um objeto novamente extensível, e caso o protótipo deste objeto receba mais propriedades/métodos, este vai herdar estas propriedades.
+
+
