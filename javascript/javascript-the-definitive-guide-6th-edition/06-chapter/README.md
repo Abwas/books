@@ -743,3 +743,15 @@ console.log( Object.prototype.isPrototypeOf( build )); // true
 console.log( build.constructor.prototype ); // Object {}
 console.log( Object.getPrototypeOf( build )); // Object {some: "value"}
 ```
+
+### Atributo `class`
+
+Em ES3 e ES5 temos uma forma indireta de saber a classe de um objeto, utilizando `Obj.toString`, que retorna `[object class]`.
+
+Vários objetos herdam outros métodos `toString()`, então apenas chamando `toString()` com `apply()` ou `call()` funcionaria.
+
+**Ver função `.classOf()` no livro (pág. 133)**
+
+* Objetos criados por construtoras internas retornam o nome desta na classe.
+* Nas construtoras criadas, a classe é `Object`.
+
