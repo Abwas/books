@@ -9,7 +9,7 @@ module.exports = function( app ) {
     Contato
       .find()
       .exec()
-      then( function( contatos ) {
+      .then( function( contatos ) {
         res
           .json( contatos );
       }, function( erro ) {
