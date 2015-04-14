@@ -767,3 +767,33 @@ Não tem como tornar um objeto novamente extensível, e caso o protótipo deste 
 `Object.seal()` sela o objeto para que não possa ser adicionadas propriedades (como em `.preventExtensions`), e deixa todas as existentes não configuráveis, porém ainda podem ter seus valores alterados. `Object.isSealed()` é usado para verificar se um objeto está selado.
 
 `Object.freeze()` sela o objeto para que não possa ser adicionadas propriedades (como em `.preventExtensions`) e deixa todas as propriedades apenas para leitura. `Object.isFrozen()` é usado para verificar se um objeto está congelado.
+
+## Serializando objetos
+
+Converte objetos JavaScript para JSON, um formato de troca de dados.
+
+Usamos o método `JSON.stringify()` para serializar, e `JSON.parse()` para converter o JSON para um objeto novamente.
+
+Os formatos serializados por JSON são:
+
+* `Object`
+* `Array`
+* `String`
+* `Number`
+* `true`
+* `false`
+* `null`
+
+```js
+var guitar = {
+  brand : 'MusicMan',
+  price : 3100,
+  made  : new Date().toJSON()
+};
+
+console.log( guitar.made ); 
+// "2015-04-14T11:53:45.645Z"
+
+console.log( JSON.stringify( guitar )); 
+// {"brand":"MusicMan","price":3100,"made":"2015-04-14T11:54:25.598Z"}
+```
