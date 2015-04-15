@@ -20,7 +20,6 @@ angular
     } else {
 
       $scope.contato = new Contato();
-
     }
 
     $scope.salva = function() {
@@ -40,5 +39,10 @@ angular
         });
 
     };
+
+    Contato
+      .query( function( contatos ) {
+        $scope.contatos = contatos;
+      });
 
   });

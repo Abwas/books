@@ -61,6 +61,8 @@ module.exports = function( app ) {
 
     var _id = req.body._id;
 
+    req.body.emegergencia = req.body.emergencia || null;
+
     if ( _id ) {
       Contato
         .findByIdAndUpdate( _id, req.body )
