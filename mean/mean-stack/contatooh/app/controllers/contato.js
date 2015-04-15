@@ -44,7 +44,7 @@ module.exports = function( app ) {
 
   controller.removeContato = function( req, res ) {
 
-    var _id : req.params.id;
+    var _id = req.params.id;
     
     Contato
       .remove({ "_id" : _id })
@@ -59,38 +59,42 @@ module.exports = function( app ) {
 
   controller.salvaContato = function( req, res ) {
 
-    var contato = req.body;
-    contato = contato._id ?
-      atualiza( contato ) :
-      adiciona( contato );
+    var _id = req.body._id;
 
-    res.json( contato );
+    if ( _id ) {
+      Contato
+        .findByIdAndUpdate( _id, req.body )
+        .exec()
+        .then( function( contato ) {
+          res.json( contato );
+        }, function( erro ) {
+          console
+            .error( erro );
+          res
+            .status( 500 )
+            .json( erro );
+        });
+    } else {
+      Contato
+        .create( req.body )
+        .then( function( contato ) {
+          res
+            .status( 201 )
+            .json( contato );
+        }, function( contato ) {
+          res
+            .status( 201 )
+            .json( contato );
+        }, function( erro ) {
+          console
+            .log( erro );
+          res
+            .status( 500 )
+            .json( erro );
+        });
+    }
     
   };
-
-  function adiciona( contatoNovo ) {
-
-    contatoNovo._id = ++ID_CONTATO_INC;
-    contatos.push( contatoNovo );
-    return contatoNovo;
-
-  }
-
-  function atualiza( contatoAlterar ) {
-
-    contatos = contatos.map( function( contato ) {
-
-      if ( contato._id === contatoAlterar._id ) {
-        contato = contatoAlterar;
-      }
-
-      return contato;
-
-    });
-
-    return contatoAlterar;
-
-  }
 
   return controller;
 
