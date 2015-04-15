@@ -44,13 +44,16 @@ module.exports = function( app ) {
 
   controller.removeContato = function( req, res ) {
 
-    var idContato = req.params.id;
+    var _id : req.params.id;
     
-    contatos = contatos.filter( function( contato ) {
-      return contato._id != idContato;
-    });
-
-    res.send( 204 ).end();
+    Contato
+      .remove({ "_id" : _id })
+      .exec()
+      .then( function() {
+        res.end();
+      }, function( erro ) {
+        return console.error( erro );
+      });
 
   };
 
