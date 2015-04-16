@@ -1,6 +1,9 @@
-var express = require( 'express' );
-var load    = require( 'express-load' );
-var bodyParser = require( 'body-parser' );
+var express      = require( 'express' );
+var load         = require( 'express-load' );
+var bodyParser   = require( 'body-parser' );
+var cookieParser = require( 'cookie-parser');
+var session      = require( 'express-session' );
+var passport     = require( 'passport' );
 
 module.exports = function() {
   var app = express();
@@ -16,6 +19,15 @@ module.exports = function() {
   // abaixo do middleware express.static
   app.set( 'view engine', 'ejs' );
   app.set( 'views', './app/views' );
+
+  app.use( cookieParser());
+  app.use( session({
+    secret : 'homem avestruz',
+    resave : true,
+    saveUninitialized : true
+  }));
+  app.use( passport.initialize());
+  app.use( passport.session());
 
   // middlewares definidos para rotas serão executados
   // em todos os métodos (GET, POST, PUT, DELETE, etc...)
