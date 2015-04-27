@@ -797,3 +797,6 @@ console.log( guitar.made );
 console.log( JSON.stringify( guitar )); 
 // {"brand":"MusicMan","price":3100,"made":"2015-04-14T11:54:25.598Z"}
 ```
+
+## Métodos de `Object`
+
