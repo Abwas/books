@@ -47,3 +47,37 @@ var twice = multiplier( 2 );
 console.log( twice );
 console.log( twice( 6.5 )); // 13
 ```
+
+## Recursion
+
+> A function that calls itself is called **recursive**. Recursion allows some functions to be written in a different style.
+
+```js
+// Recursion - power
+function power( base, exponent ) {
+  
+  if ( exponent === 0 ) {
+    return 1;
+  }
+  
+  return base * power( base, exponent - 1 );
+  
+}
+
+console.log( power( 5, 3 )); //125
+```
+
+```js
+// Recursion - Factorial
+function factorial( number ) {
+  
+  if ( number === 1 ) {
+    return 1;
+  }
+  
+  return number * factorial( number - 1 );
+  
+}
+
+console.log( factorial( 5 )); // 120
+```
