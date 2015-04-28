@@ -28,3 +28,22 @@ function future() {
 > "This code works, even though the function is defined below the code that uses it. This is because function declarations are not part of the regular top-to-bottom flow of control. They are conceptually moved to the top of their scope and can be used by all the code in that scope. This is sometimes useful because it gives us the freedom to order code in a way that seems meaningful, without worrying about having to define all functions above their first use."
 
 **Tip**: Do not declare functions inside conditional loops!
+
+## Closure
+
+> The ability to treat functions as values, combined with the fact that local variables are “re-created” every time a function is called.
+>
+> This feature—being able to reference a specific instance of local variables in an enclosing function—is called closure. A function that “closes over” some local variables is called a closure.
+
+```js
+// Closure
+function multiplier( factor ) {
+  return function( number ) {
+    return factor * number;
+  }
+}
+
+var twice = multiplier( 2 );
+console.log( twice );
+console.log( twice( 6.5 )); // 13
+```
