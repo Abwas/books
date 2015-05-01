@@ -100,3 +100,11 @@ function findSolution(target) {
 
 console.log(findSolution(13)); // "(((1 * 3) + 5) + 5)"
 ```
+
+## Functions and side effects
+
+> "Functions that create values are easier to combine in new ways than functions that directly perform side effects."
+>
+> "A pure function is a specific kind of value-producing function that not only has no side effects but also doesn’t rely on side effects from other code."
+>
+> "A pure function has the pleasant property that, when called with the same arguments, it always produces the same value (and doesn’t do anything else)."
