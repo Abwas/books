@@ -1,4 +1,4 @@
-# 3. Functions
+# Chapter 3. Functions
 
 ## Defining a function
 
