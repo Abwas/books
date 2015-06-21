@@ -12,10 +12,7 @@ function isPalindrome( text ) {
   return isPalindrome( text.substr( 1, length - 2 ));
 }
 
-console.log( isPalindrome( 'reviver' ));
-console.log( isPalindrome( 'reter' ));
-console.log( isPalindrome( 'rever' ));
-console.log( isPalindrome( 'eric' ));
+module.exports = isPalindrome;
 
 // ps:
 // substr() second  parameter represents the length of the string
