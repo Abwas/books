@@ -6,8 +6,12 @@ describe( 'Math.min() and Math.max()', function() {
 
   var nums = [ 0, 1, 3, 2, 6 ];
 
-  it( 'should find the smallest value', function() {
+  it( 'should find the smallest value in an array', function() {
     expect( smallest( nums )).to.equal( 0 );
+  });
+
+  it( 'should find the largest value in an array', function() {
+    expect( largest( nums )).to.equal( 6 );
   });
 
 });
