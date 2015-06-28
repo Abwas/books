@@ -1,5 +1,5 @@
 function fail( thing ) {
-  return Error( thing );
+  throw new Error( thing );
 }
 
 module.exports = fail;
