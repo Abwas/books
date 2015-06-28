@@ -10,3 +10,5 @@ function comparator( pred ) {
       return 0;
   }
 }
+
+module.exports = comparator;
