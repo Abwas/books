@@ -16,6 +16,10 @@
 - Function as an argument
 - Return a function as a result
 
+**Imperative programming**
+
+> Further, imperative languages are often restricted to a level of detail that is good for their compilers rather than for their programmers (Sokolowski 1991).
+
 [0]: https://github.com/funjs/book-source
 [1]: http://underscorejs.org/
 [2]: https://lodash.com
