@@ -18,3 +18,47 @@
 - write functions that way can help to separate concerns and reduce code duplications
 - to manipulate DOM, you should have functions dedicated to it, such as view's `.render()` or DOM plug-in.
 
+### Named function expressions
+
+- Get benefits of code organization and conditional function definition without littering stack traces with anonymous functions
+
+```js
+var lightbulbAPI = {
+  toggle: function toggle() {},
+  getState: function getState() {},
+  off: function off() {},
+  on: function on() {},
+  blink: function blink() {}
+};
+```
+
+### Lambdas
+
+- Lambda is a function that is used as data (as a parameter, a return value, like any other literal value)
+- Are commonly used to:
+ - perform operations on arguments
+ - attach event handlers for DOM
+ - pass in a callback function
+ - wrap exisgint functions with additional functionality (function decorator)
+ - take a function that requires multiple parameters, and return a function that requires fewer parameters (partial application and currying)
+ - return a function from another function
+- important point: lambdas are treated like data that can be passed around as inputs and outputs between functions, regardless of wheter or not they are named
+- **first-class functions**: a function that can be used anywhere you would use a value
+- **high-order functions**: a function that consume or return functions as data.
+- lambdas get passed to and/or returned from high order functions
+- a function might be both a lambda and a higher order function
+
+```js
+var sum = function sum() {
+  var result = 0;
+
+  [5, 5, 5].forEach(function addTo(number) { result += number; });
+
+  return result;
+};
+
+test('Lambdas.', function () {
+  equal(sum(), 15,
+    'result should be 15.');
+});
+```
