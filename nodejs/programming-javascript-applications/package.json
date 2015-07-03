@@ -1,0 +1,18 @@
+{
+  "name": "programming-javascript-applications",
+  "version": "1.0.0",
+  "description": "## [Chapter 2. Functions](http://chimera.labs.oreilly.com/books/1234000000262/ch02.html)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Douglas <eric.douglas.mail@gmail.com> (https://github.com/ericdouglas)",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
+  }
+}
