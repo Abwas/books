@@ -104,3 +104,19 @@ test('Lambdas.', function () {
   });
 }());
 ```
+
+### Method Context
+
+ps: see more explanation [here](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
+
+### Function Scope
+
+#### Hoisting
+
+- JS builds its execution environment in two passes
+  1. **Runtime environment**: first scans all variables and functions
+    - function (declaration) avaiable
+    - variables `undefined`
+    - function expression behaves like variables
+  2. **Execution pass**
+
