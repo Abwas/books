@@ -205,3 +205,14 @@ test('Dynamic dispatch', function () {
     'Dispatched to goodbye method.');
 });
 ```
+
+### Generics and Collection Polymorphism
+
+- Generic programming style that attempts to express algorithms and data structures in a way that is type agnostic
+- Generics do not require conditional logic branching
+- employ parametric polymorphism, uses single branch of logic applied to generic type parameters
+-  ad-hoc polymorphism relies on conditional branching
+- Generic programming is particularly relevant to functional programming FP works best when a simple function vocabulary can express a wide range of functionality, regardless of type
+- JavaScript supports two types of collections: objects and arrays. 
+- Difference between an object and an array is that one is keyed with names and the other sequentially with numbers
+
