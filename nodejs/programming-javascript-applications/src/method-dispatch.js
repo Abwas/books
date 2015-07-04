@@ -6,7 +6,7 @@ var methods = {
     return 'Hello, ' + args;
   },
   goodbye : function( args ) {
-    'Goodbye, cruel ' + args;
+    return 'Goodbye, cruel ' + args;
   }
 };
 

@@ -8,11 +8,11 @@ describe( 'Method dispatch', function() {
   });
 
   it( 'Should return the hello function', function() {
-  
+    expect( greet( 'hello', 'Eric' )).to.equal( 'Hello, Eric' );
   });
 
   it( 'Should return the goodbye function', function() {
-  
+    expect( greet( 'goodbye', 'world' )).to.equal( 'Goodbye, cruel world' );
   });
 
 });
