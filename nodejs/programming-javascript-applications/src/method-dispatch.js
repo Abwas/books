@@ -22,7 +22,7 @@ var greet = function greet( options ) {
     args.shift();
   }
 
-  return methods[ options ]( args );
+  return methods[ action ]( args );
 };
 
 module.exports = greet;
