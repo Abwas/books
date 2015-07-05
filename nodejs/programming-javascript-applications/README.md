@@ -297,3 +297,10 @@ test('safeRotate', function () {
     'Should not mutate external data.');
 });
 ```
+
+#### Partial Application and Currying
+
+- **Partial application** wraps a function that takes multiple arguments and returns a function that takes fewer arguments
+- If your function uses this, you shouldn't use .bind()
+- **Currying** is the process of transforming a function that takes multiple arguments into a chain of functions, each of which takes no more than one argument
+
