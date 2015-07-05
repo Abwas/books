@@ -206,7 +206,7 @@ test('Dynamic dispatch', function () {
 });
 ```
 
-### Generics and Collection Polymorphism
+#### Generics and Collection Polymorphism
 
 - Generic programming style that attempts to express algorithms and data structures in a way that is type agnostic
 - Generics do not require conditional logic branching
@@ -216,3 +216,84 @@ test('Dynamic dispatch', function () {
 - JavaScript supports two types of collections: objects and arrays. 
 - Difference between an object and an array is that one is keyed with names and the other sequentially with numbers
 
+```js
+var toArray = function toArray(obj) {
+  var arr = [],
+    prop;
+
+  for (prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      arr.push(prop);
+    }
+  }
+  return arr;
+};
+```
+
+```js
+var randomItem = function randomItem(collection) {
+  var arr = ({}.toString.call(collection) !== 
+    '[object Array]')
+      ? toArray(collection)
+      : collection;
+  return arr[Math.floor(arr.length * Math.random())];
+};
+
+test('randomItem()', function () {
+  var obj = {
+      a: 'a',
+      b: 'b',
+      c: 'c'
+    },
+    arr = ['a', 'b', 'c'];
+
+  ok(obj.hasOwnProperty(randomItem(obj)),
+    'randomItem works on Objects.');
+
+  ok(obj.hasOwnProperty(randomItem(arr)),
+    'randomItem works on Arrays.');
+});
+```
+
+#### Method Chaining and Fluent APIs
+
+- use the output of one method call as the context of the next method call
+- fluent API is one that reads like natural language
+- has its disadvantages
+  - encourage to do too much in a single LOC (line of code)
+  - encourage too much procedural code
+  - can be difficulty to debug
+  - can lead to unnecessary verbosity
+
+### Functional Programming
+
+- uses higher-order functions
+- higher order function treats functions as data, either taking a function as an argument or returning a function as a result
+
+#### Stateless Functions (aka Pure Functions)
+
+- pure functions do not use or modify variables, objects, or arrays that were defined outside the function
+- given the same inputs, return the same output
+- stateless functions can often be run in parallel
+- much easier to scale horizontally
+- can be abstracted and shared as context-agnostic modules
+- To maximize code reuse, try to make as many functions as possible both stateless and generic
+
+```js
+var safeRotate = function safeRotate(arr) {
+  var newArray = arr.slice(0);
+  newArray.push(newArray.shift());
+  return newArray;
+}
+
+test('safeRotate', function () {
+  var original = [1, 2, 3];
+
+  deepEqual(safeRotate(original), [2,3,1],
+    'safeRotate() should rotate array elements.');
+
+  // Passes.
+  deepEqual(original, [1,2,3],
+    'Should not mutate external data.');
+});
+```
